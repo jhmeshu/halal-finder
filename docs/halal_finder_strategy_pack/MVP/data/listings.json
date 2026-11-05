@@ -728,5 +728,243 @@
         "Slaughterhouse certification records maintained by butcher; batch certificates available upon request."
       ]
     }
+  },
+  {
+    "id": "osm-way-1234233444",
+    "slug": "indina-halal-food-bangkok",
+    "name": "Indina & Halal Food",
+    "type": "restaurant",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "10/1, ถนนคอนแวนต์, เขตบางรัก, Bangkok, 10500",
+    "coordinates": {
+      "lat": 13.72707,
+      "lng": 100.53322
+    },
+    "cuisine": "Indian",
+    "price": "$",
+    "emoji": "🍲",
+    "art": "green",
+    "featured": false,
+    "desc": "Indina & Halal Food in Bangkok, tagged halal on OpenStreetMap.",
+    "tags": [
+      "OpenStreetMap (ODbL)",
+      "diet:halal=yes",
+      "Muslim-owned",
+      "indian"
+    ],
+    "isMuslimOwned": true,
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "OpenStreetMap contributors (ODbL 1.0)",
+    "dataLicence": "ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+    "evidence": {
+      "status": "community_reported",
+      "scope": "Halal food options tagged on OpenStreetMap",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.openstreetmap.org/way/1234233444",
+      "sourceLicence": "ODbL 1.0",
+      "reviewerRole": "OSM Importer",
+      "limitations": [
+        "Community-reported from OpenStreetMap (diet:halal tag). Check current certification or meat suppliers on-site."
+      ]
+    }
+  },
+  {
+    "id": "osm-way-1363991794",
+    "slug": "la-meet-halal-bangkok",
+    "name": "La Meet (Halal)",
+    "type": "restaurant",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "2/2, ซอยวิภาวดีรังสิต 2, เขตดินแดง, Bangkok, 10400",
+    "coordinates": {
+      "lat": 13.77853,
+      "lng": 100.55772
+    },
+    "cuisine": "Halal Dining",
+    "price": "$$",
+    "emoji": "🍲",
+    "art": "green",
+    "featured": false,
+    "desc": "La Meet (Halal) in Bangkok, tagged halal on OpenStreetMap.",
+    "tags": [
+      "OpenStreetMap (ODbL)",
+      "Muslim-owned"
+    ],
+    "isMuslimOwned": true,
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "OpenStreetMap contributors (ODbL 1.0)",
+    "dataLicence": "ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+    "evidence": {
+      "status": "community_reported",
+      "scope": "Halal food options tagged on OpenStreetMap",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.openstreetmap.org/way/1363991794",
+      "sourceLicence": "ODbL 1.0",
+      "reviewerRole": "OSM Importer",
+      "limitations": [
+        "Community-reported from OpenStreetMap (diet:halal tag). Check current certification or meat suppliers on-site."
+      ]
+    }
+  },
+  {
+    "id": "osm-node-6054086385",
+    "slug": "mj-family-halal-restaurant-bangkok",
+    "name": "MJ Family Halal Restaurant",
+    "type": "restaurant",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "ตรอกบวรรังษี, เขตพระนคร, Bangkok, 10200",
+    "coordinates": {
+      "lat": 13.7579,
+      "lng": 100.4993
+    },
+    "cuisine": "Halal Dining",
+    "price": "$",
+    "emoji": "🍲",
+    "art": "green",
+    "featured": false,
+    "desc": "MJ Family Halal Restaurant in Bangkok, tagged halal on OpenStreetMap.",
+    "tags": [
+      "OpenStreetMap (ODbL)",
+      "Muslim-owned"
+    ],
+    "isMuslimOwned": true,
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "OpenStreetMap contributors (ODbL 1.0)",
+    "dataLicence": "ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+    "evidence": {
+      "status": "community_reported",
+      "scope": "Halal food options tagged on OpenStreetMap",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.openstreetmap.org/node/6054086385",
+      "sourceLicence": "ODbL 1.0",
+      "reviewerRole": "OSM Importer",
+      "limitations": [
+        "Community-reported from OpenStreetMap (diet:halal tag). Check current certification or meat suppliers on-site."
+      ]
+    }
+  },
+  {
+    "id": "osm-node-12430090802",
+    "slug": "indian-halal-food-bangkok",
+    "name": "Indian & halal food",
+    "type": "restaurant",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "ซอยเจริญกรุง 47/1, เขตบางรัก, Bangkok, 10500",
+    "coordinates": {
+      "lat": 13.72491,
+      "lng": 100.51673
+    },
+    "cuisine": "Indian",
+    "price": "$",
+    "emoji": "🍲",
+    "art": "green",
+    "featured": false,
+    "desc": "Indian & halal food in Bangkok, tagged halal on OpenStreetMap.",
+    "tags": [
+      "OpenStreetMap (ODbL)",
+      "Muslim-owned",
+      "indian"
+    ],
+    "isMuslimOwned": true,
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "OpenStreetMap contributors (ODbL 1.0)",
+    "dataLicence": "ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+    "evidence": {
+      "status": "community_reported",
+      "scope": "Halal food options tagged on OpenStreetMap",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.openstreetmap.org/node/12430090802",
+      "sourceLicence": "ODbL 1.0",
+      "reviewerRole": "OSM Importer",
+      "limitations": [
+        "Community-reported from OpenStreetMap (diet:halal tag). Check current certification or meat suppliers on-site."
+      ]
+    }
+  },
+  {
+    "id": "osm-node-5636863621",
+    "slug": "saman-islam-halal-food-bangkok",
+    "name": "Saman Islam | Halal Food",
+    "type": "restaurant",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "ถนนหลัก, เขตจตุจักร, Bangkok, 10900",
+    "coordinates": {
+      "lat": 13.79979,
+      "lng": 100.55091
+    },
+    "cuisine": "Halal Dining",
+    "price": "$",
+    "emoji": "🍲",
+    "art": "green",
+    "featured": false,
+    "desc": "Saman Islam | Halal Food in Bangkok, tagged halal on OpenStreetMap.",
+    "tags": [
+      "OpenStreetMap (ODbL)",
+      "Muslim-owned"
+    ],
+    "isMuslimOwned": true,
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "OpenStreetMap contributors (ODbL 1.0)",
+    "dataLicence": "ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+    "evidence": {
+      "status": "community_reported",
+      "scope": "Halal food options tagged on OpenStreetMap",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.openstreetmap.org/node/5636863621",
+      "sourceLicence": "ODbL 1.0",
+      "reviewerRole": "OSM Importer",
+      "limitations": [
+        "Community-reported from OpenStreetMap (diet:halal tag). Check current certification or meat suppliers on-site."
+      ]
+    }
+  },
+  {
+    "id": "osm-node-13261578853",
+    "slug": "charm-thai-halal-food-bangkok",
+    "name": "Charm Thai Halal Food",
+    "type": "restaurant",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "ซอยเจริญกรุง 74, เขตบางคอแหลม, Bangkok, 10120",
+    "coordinates": {
+      "lat": 13.7057,
+      "lng": 100.50344
+    },
+    "cuisine": "Halal Dining",
+    "price": "$",
+    "emoji": "🍲",
+    "art": "green",
+    "featured": false,
+    "desc": "Charm Thai Halal Food in Bangkok, tagged halal on OpenStreetMap.",
+    "tags": [
+      "OpenStreetMap (ODbL)",
+      "diet:halal=yes",
+      "Muslim-owned"
+    ],
+    "isMuslimOwned": true,
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "OpenStreetMap contributors (ODbL 1.0)",
+    "dataLicence": "ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+    "evidence": {
+      "status": "community_reported",
+      "scope": "Halal food options tagged on OpenStreetMap",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.openstreetmap.org/node/13261578853",
+      "sourceLicence": "ODbL 1.0",
+      "reviewerRole": "OSM Importer",
+      "limitations": [
+        "Community-reported from OpenStreetMap (diet:halal tag). Check current certification or meat suppliers on-site."
+      ]
+    }
   }
 ]
