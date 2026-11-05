@@ -5,7 +5,7 @@
 // value passes through escapeHtml. Saved state is injected so this module
 // has no store dependency.
 
-import { escapeHtml, toast } from './dom.js';
+import { escapeHtml } from './dom.js';
 import { getEvidenceDisplay } from './evidence.js';
 import { listingKey, typeLabel } from './listings.js';
 
@@ -64,13 +64,6 @@ export function cardHtml(item, { isSaved = () => false } = {}) {
 </article>`;
 }
 
-// Details opens the lightweight fallback until HF-04 ships a real detail
-// view. Wording stays honest about sample status and evidence.
-export function showDetailsToast(item) {
-  if (!item) return;
-  const evidence = getEvidenceDisplay(item.evidence);
-  const message = item.isSample
-    ? `${item.name}: fictional sample — ${evidence.label}. Confirm with the business in real use.`
-    : `${item.name}: ${evidence.label}. Confirm directly with the business before visiting.`;
-  toast(message);
-}
+// Details opens the real listing detail dialog (HF-04, see detail.js),
+// wired through the data-action="details" delegation in discover.js and
+// saved.js.

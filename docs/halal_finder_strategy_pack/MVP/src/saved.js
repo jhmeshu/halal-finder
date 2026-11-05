@@ -15,7 +15,8 @@ import {
   STORAGE_UNAVAILABLE_MESSAGE,
 } from './config.js';
 import { $, toast } from './dom.js';
-import { cardHtml, findListingById, showDetailsToast } from './cards.js';
+import { cardHtml, findListingById } from './cards.js';
+import { openListingDetail } from './detail.js';
 import { onPageEnter } from './router.js';
 
 let savedIds = [];
@@ -180,7 +181,7 @@ export function initSavedPage(getItems) {
     if (actionEl.dataset.action === 'toggle-save') {
       toggleSavedAndNotify(item);
     } else if (actionEl.dataset.action === 'details') {
-      showDetailsToast(item);
+      openListingDetail(item, actionEl);
     }
   });
 

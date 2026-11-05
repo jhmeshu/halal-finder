@@ -56,6 +56,7 @@ export function normalizeListing(raw) {
     city,
     country,
     cityLine: [city, country].filter(Boolean).join(', '),
+    address: asString(item.address),
     cuisine: asString(item.cuisine),
     price: asString(item.price),
     emoji: asString(item.emoji),

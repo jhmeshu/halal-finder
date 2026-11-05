@@ -615,3 +615,176 @@ a{color:inherit}
   color:var(--hf-accent-strong);
   font-weight:700;
 }
+
+/* ===== HF-04 — listing detail dialog =====
+ * Native <dialog> centred with fixed positioning + auto margins; internal
+ * scroll lives in .detail-body. Max width 480px, radius --hf-radius-2xl,
+ * --hf-shadow-lg elevation, logical properties only (RTL-safe). Never a dead
+ * end: Close button, Esc (native/fallback), backdrop click, focus returned
+ * to the invoking button. Motion respects prefers-reduced-motion via the
+ * global rule at the end of this file.
+ */
+.detail-dialog{
+  position:fixed;
+  inset:0;
+  margin:auto;
+  width:min(480px, calc(100vw - var(--hf-space-6)));
+  max-height:calc(100dvh - var(--hf-space-6));
+  padding:0;
+  border:1px solid var(--hf-line);
+  border-radius:var(--hf-radius-2xl);
+  background:var(--hf-surface);
+  color:var(--hf-ink);
+  box-shadow:var(--hf-shadow-lg);
+  overflow:hidden;
+  z-index:30;
+}
+.detail-dialog[open]{
+  display:flex;
+  flex-direction:column;
+  animation:detail-dialog-in var(--hf-duration-base) var(--hf-ease-out);
+}
+@keyframes detail-dialog-in{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.detail-dialog::backdrop{
+  background:color-mix(in srgb, var(--hf-ink) 55%, transparent);
+}
+/* Fallback path (no showModal): dim the page behind the emulated modal. */
+body.detail-open-fallback::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:color-mix(in srgb, var(--hf-ink) 55%, transparent);
+  z-index:20;
+  pointer-events:none;
+}
+
+.detail-header{
+  display:flex;
+  align-items:flex-start;
+  gap:var(--hf-space-3);
+  padding:var(--hf-space-5) var(--hf-space-5) var(--hf-space-4);
+  border-block-end:1px solid var(--hf-line);
+}
+.detail-header-text{min-width:0}
+.detail-title{
+  margin:var(--hf-space-1) 0 0;
+  font-size:var(--hf-text-h2);
+  line-height:1.2;
+  letter-spacing:-0.02em;
+  overflow-wrap:anywhere;
+}
+.detail-subtitle{
+  margin:var(--hf-space-1) 0 0;
+  color:var(--hf-muted);
+  font-size:var(--hf-text-small);
+  overflow-wrap:anywhere;
+}
+.detail-close{
+  flex:none;
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  min-width:44px;
+  min-height:44px;
+  margin-inline-start:auto;
+  border:1px solid var(--hf-line);
+  border-radius:var(--hf-radius-md);
+  background:var(--hf-surface-muted);
+  color:var(--hf-ink-2);
+}
+.detail-close:hover{background:var(--hf-primary-softer);color:var(--hf-primary-strong)}
+
+.detail-body{
+  padding:var(--hf-space-4) var(--hf-space-5) var(--hf-space-5);
+  overflow:auto;
+  overscroll-behavior:contain;
+}
+.detail-footer{
+  border-block-start:1px solid var(--hf-line);
+  padding:var(--hf-space-3) var(--hf-space-5);
+  display:flex;
+  justify-content:flex-end;
+}
+
+.detail-badges{display:flex;gap:var(--hf-space-2);flex-wrap:wrap;margin-block-end:var(--hf-space-3)}
+.detail-sample-notice{margin-block-end:var(--hf-space-3)}
+.detail-expiry-notice{margin-block:var(--hf-space-3)}
+.detail-evidence{margin:0}
+
+/* md badge size for the detail view (design system §4.3) */
+.evidence--md{
+  font-size:var(--hf-text-body);
+  padding:8px 13px;
+  border-radius:var(--hf-radius-md);
+  margin-block:var(--hf-space-3) var(--hf-space-2);
+}
+
+.detail-desc{margin:0;color:var(--hf-ink-2)}
+
+.detail-facts{margin:var(--hf-space-4) 0 0;display:grid}
+.detail-section .detail-facts{margin-block-start:var(--hf-space-2)}
+.detail-row{padding-block:var(--hf-space-3);border-block-end:1px solid var(--hf-line)}
+.detail-row:last-child{border-block-end:0}
+.detail-row dt{
+  font-size:var(--hf-text-label);
+  font-weight:800;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:var(--hf-muted);
+}
+.detail-row dd{margin:var(--hf-space-1) 0 0;overflow-wrap:anywhere;color:var(--hf-ink)}
+
+.detail-section{margin-block-start:var(--hf-space-5)}
+.detail-section-title{margin:0;font-size:var(--hf-text-h3);letter-spacing:-0.01em}
+
+.detail-source-line{margin:0;line-height:1.5}
+.detail-source-name{font-weight:700}
+.detail-source-url{margin:var(--hf-space-1) 0 0}
+.detail-source-raw{overflow-wrap:anywhere}
+.detail-link{
+  color:var(--hf-primary-strong);
+  text-decoration:underline;
+  text-underline-offset:2px;
+  overflow-wrap:anywhere;
+}
+.detail-source-missing{
+  margin:0;
+  display:flex;
+  gap:var(--hf-space-2);
+  align-items:baseline;
+  font-weight:700;
+  font-size:var(--hf-text-small);
+  line-height:1.5;
+  color:var(--hf-accent-strong);
+  background:var(--hf-accent-soft);
+  border:1px solid color-mix(in srgb, var(--hf-accent) 35%, transparent);
+  border-radius:var(--hf-radius-md);
+  padding:var(--hf-space-3);
+}
+.detail-source-marker{font-weight:850}
+
+.detail-limitations{
+  margin:var(--hf-space-2) 0 0;
+  padding-inline-start:var(--hf-space-5);
+  display:grid;
+  gap:var(--hf-space-2);
+}
+.detail-no-limitations{margin:var(--hf-space-1) 0 0}
+
+@media (max-width: 559px){
+  .detail-dialog{
+    width:calc(100vw - (var(--hf-space-4) * 2));
+    max-height:calc(100dvh - var(--hf-space-4));
+  }
+  .detail-header{padding:var(--hf-space-4) var(--hf-space-4) var(--hf-space-3)}
+  .detail-body{padding:var(--hf-space-3) var(--hf-space-4) var(--hf-space-4)}
+  .detail-footer{padding:var(--hf-space-3) var(--hf-space-4)}
+}
+
+/* The generic .eyebrow uses --hf-primary, which fails contrast on the dark
+ * surface; inside the dialog, use the theme-aware strong primary instead. */
+.detail-header .eyebrow{color:var(--hf-primary-strong)}

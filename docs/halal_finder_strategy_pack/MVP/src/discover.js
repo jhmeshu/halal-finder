@@ -10,7 +10,8 @@
 
 import { $, qsa, escapeHtml } from './dom.js';
 import { loadListings, filterListings, FILTERS } from './listings.js';
-import { cardHtml, findListingById, showDetailsToast } from './cards.js';
+import { cardHtml, findListingById } from './cards.js';
+import { openListingDetail } from './detail.js';
 import { isSaved, toggleSavedAndNotify, updateSavedCount } from './saved.js';
 
 const state = {
@@ -174,7 +175,7 @@ function onPlacesClick(event) {
     // Cascade re-renders the grid; nothing else to do here.
     toggleSavedAndNotify(item);
   } else if (actionEl.dataset.action === 'details') {
-    showDetailsToast(item);
+    openListingDetail(item, actionEl);
   }
 }
 

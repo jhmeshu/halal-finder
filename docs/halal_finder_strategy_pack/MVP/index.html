@@ -200,6 +200,22 @@
     <div>Free-first build · Privacy-conscious · Global-ready structure</div>
   </footer>
 </div>
+<dialog id="listingDetailDialog" class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="listingDetailTitle" aria-describedby="listingDetailSubtitle">
+  <div class="detail-header">
+    <div class="detail-header-text">
+      <span class="eyebrow">Listing evidence</span>
+      <h2 class="detail-title" id="listingDetailTitle" tabindex="-1">Listing</h2>
+      <p class="detail-subtitle" id="listingDetailSubtitle"></p>
+    </div>
+    <button type="button" class="detail-close" id="listingDetailCloseBtn" aria-label="Close listing details">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+    </button>
+  </div>
+  <div class="detail-body" id="listingDetailBody" role="region" aria-label="Listing details" tabindex="0"></div>
+  <div class="detail-footer">
+    <button type="button" class="btn outline" data-action="close-detail">Close</button>
+  </div>
+</dialog>
 <div id="toast" class="toast hide" role="status" aria-live="polite"></div>
 <script type="module" src="./src/app.js"></script>
 </body>
