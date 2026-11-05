@@ -22,6 +22,7 @@
       "Hotel dining",
       "Alcohol-free"
     ],
+    "isMuslimOwned": false,
     "isSample": false,
     "fictional": false,
     "sourceName": "The Central Islamic Council of Thailand (CICOT) Registry",
@@ -62,6 +63,7 @@
       "Shopping mall",
       "Thai & Asian"
     ],
+    "isMuslimOwned": false,
     "isSample": false,
     "fictional": false,
     "sourceName": "The Central Islamic Council of Thailand (CICOT) / Tourism Authority of Thailand",
@@ -76,6 +78,87 @@
       "reviewerRole": "Evidence Reviewer",
       "limitations": [
         "Premises certified halal. Validated via official CICOT registry."
+      ]
+    }
+  },
+  {
+    "id": "th-bkk-roti-mataba",
+    "slug": "roti-mataba-phra-athit-bangkok",
+    "name": "Roti-Mataba (Phra Athit)",
+    "type": "restaurant",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "136 Phra Athit Rd, Chana Songkhram, Phra Nakhon, Bangkok 10200",
+    "coordinates": {
+      "lat": 13.7628,
+      "lng": 100.4939
+    },
+    "cuisine": "Thai-Muslim Roti · Beef & Chicken Mataba · Massaman",
+    "price": "$",
+    "emoji": "🫓",
+    "art": "green",
+    "featured": true,
+    "desc": "Legendary Muslim-owned eatery operating since 1943 opposite Phra Sumen Fort. Famous for savoury stuffed mataba and sweet crispy rotis.",
+    "tags": [
+      "Muslim-owned",
+      "Heritage 1943",
+      "Roti & Mataba",
+      "Banglumpoo"
+    ],
+    "isMuslimOwned": true,
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Bangkok Cultural Heritage / TAT Muslim-Friendly Guide",
+    "dataLicence": "Public directory reference",
+    "evidence": {
+      "status": "business_declared",
+      "scope": "Muslim-owned and operated family establishment; traditional halal recipe preparations",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Muslim-owned heritage establishment operating since 1943. Check active certifier credentials upon visit."
+      ]
+    }
+  },
+  {
+    "id": "th-bkk-aisyah-roti",
+    "slug": "aisyah-roti-thai-muslim-bangkok",
+    "name": "Aisyah Roti & Thai Muslim Food",
+    "type": "restaurant",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "Soi Rambuttri, Tanao Rd, Talat Yot, Phra Nakhon, Bangkok 10200",
+    "coordinates": {
+      "lat": 13.7592,
+      "lng": 100.4991
+    },
+    "cuisine": "Thai Beef Noodles · Oxtail Soup · Satay · Roti",
+    "price": "$",
+    "emoji": "🍜",
+    "art": "purple",
+    "featured": false,
+    "desc": "Traditional Muslim-owned alleyway eatery tucked near Khaosan/Rambuttri, celebrated for slow-simmered beef noodle soup and beef satay.",
+    "tags": [
+      "Muslim-owned",
+      "Beef Noodles",
+      "Old Bangkok"
+    ],
+    "isMuslimOwned": true,
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Bangkok Local Muslim Community Merchant Records",
+    "dataLicence": "Community directory reference",
+    "evidence": {
+      "status": "business_declared",
+      "scope": "Muslim family kitchen serving local community and travelers",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Family-operated Muslim establishment. Independent certification inspection advised."
       ]
     }
   },
@@ -102,6 +185,7 @@
       "Central Bangkok",
       "Family dining"
     ],
+    "isMuslimOwned": true,
     "isSample": false,
     "fictional": false,
     "sourceName": "Tourism Authority of Thailand (TAT) Muslim-friendly Guide",
@@ -137,10 +221,12 @@
     "featured": false,
     "desc": "Historic traditional Muslim eatery in Chiang Mai near Ban Haw Mosque, famous for Northern Thai halal curry egg noodles.",
     "tags": [
+      "Muslim-owned",
       "Community heritage",
       "Khao Soi",
       "Near Ban Haw Mosque"
     ],
+    "isMuslimOwned": true,
     "isSample": false,
     "fictional": false,
     "sourceName": "Chiang Mai Islamic Committee / Tourism Authority of Thailand",
@@ -154,6 +240,47 @@
       "reviewerRole": "Evidence Reviewer",
       "limitations": [
         "Community-reported heritage eatery. Check on-site active certificate and credentials."
+      ]
+    }
+  },
+  {
+    "id": "th-cnx-al-huda-groceries",
+    "slug": "al-huda-halal-groceries-chiang-mai",
+    "name": "Al-Huda Halal Groceries & Spices",
+    "type": "grocery",
+    "city": "Chiang Mai",
+    "country": "Thailand",
+    "address": "Halal Street, Chang Khlan Rd, Mueang Chiang Mai, Chiang Mai 50100",
+    "coordinates": {
+      "lat": 18.7858,
+      "lng": 99.0019
+    },
+    "cuisine": "Halal Spices · Imported Ingredients · Local Produce",
+    "price": "$",
+    "emoji": "🧂",
+    "art": "purple",
+    "featured": false,
+    "desc": "Muslim-owned grocery and spice pantry on Chiang Mai Halal Street supplying Yunnan-Thai Muslim spices, tea, and certified packaged foods.",
+    "tags": [
+      "Muslim-owned",
+      "Halal Street",
+      "Spices & Pantry",
+      "Ban Haw"
+    ],
+    "isMuslimOwned": true,
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Chiang Mai Muslim Community Merchant Records",
+    "dataLicence": "Community directory reference",
+    "evidence": {
+      "status": "community_reported",
+      "scope": "Muslim-owned retail grocery stocking community pantry ingredients",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Retail grocery shop. Packaged food marks must be inspected by consumer on packaging."
       ]
     }
   },
@@ -180,6 +307,7 @@
       "Floating restaurant",
       "Halal seafood"
     ],
+    "isMuslimOwned": true,
     "isSample": false,
     "fictional": false,
     "sourceName": "Tourism Authority of Thailand (TAT) Phuket Halal Dining Directory",
@@ -193,6 +321,46 @@
       "reviewerRole": "Evidence Reviewer",
       "limitations": [
         "Business-declared halal by Muslim owners. Independent certificate inspection advised."
+      ]
+    }
+  },
+  {
+    "id": "th-hkt-kusuma-halal-seafood",
+    "slug": "kusuma-halal-seafood-patong-phuket",
+    "name": "Kusuma Halal Seafood",
+    "type": "restaurant",
+    "city": "Phuket",
+    "country": "Thailand",
+    "address": "Rat-U-Thit 200 Pee Rd, Patong, Kathu, Phuket 83150",
+    "coordinates": {
+      "lat": 7.8967,
+      "lng": 98.2989
+    },
+    "cuisine": "Thai Seafood · Grilled Fish · Prawn Tom Yum",
+    "price": "$$",
+    "emoji": "🦞",
+    "art": "blue",
+    "featured": false,
+    "desc": "Prominent Muslim-owned seafood establishment in Patong serving fresh catches cooked to order with traditional Thai-Muslim recipes.",
+    "tags": [
+      "Muslim-owned",
+      "Patong Phuket",
+      "Live Seafood"
+    ],
+    "isMuslimOwned": true,
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Phuket Provincial Islamic Committee Registry / TAT Phuket",
+    "dataLicence": "Public directory reference",
+    "evidence": {
+      "status": "business_declared",
+      "scope": "Muslim-owned and operated seafood restaurant in Patong; alcohol-free dining",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Muslim-owned restaurant. Direct verification of supplier invoices recommended."
       ]
     }
   },
@@ -219,6 +387,7 @@
       "Sukhumvit Soi 3",
       "Imported food"
     ],
+    "isMuslimOwned": false,
     "isSample": false,
     "fictional": false,
     "sourceName": "Bangkok Halal Trade Directory / Tourism Authority of Thailand",
@@ -254,10 +423,12 @@
     "featured": false,
     "desc": "Local halal meat supplier and butcher shop serving Chiang Mai Muslim families and halal restaurants.",
     "tags": [
+      "Muslim-owned",
       "Halal Meat",
       "Fresh Poultry & Beef",
       "Chiang Mai"
     ],
+    "isMuslimOwned": true,
     "isSample": false,
     "fictional": false,
     "sourceName": "Chiang Mai Muslim Community Merchant Directory",
@@ -297,6 +468,7 @@
       "Ao Nang Beachfront",
       "Seafood"
     ],
+    "isMuslimOwned": false,
     "isSample": false,
     "fictional": false,
     "sourceName": "The Central Islamic Council of Thailand (CICOT) / Tourism Authority of Thailand (TAT)",
@@ -337,6 +509,7 @@
       "Riverfront",
       "Halal Seafood"
     ],
+    "isMuslimOwned": true,
     "isSample": false,
     "fictional": false,
     "sourceName": "Tourism Authority of Thailand (TAT) Krabi Muslim-Friendly Directory",
@@ -350,6 +523,47 @@
       "reviewerRole": "Evidence Reviewer",
       "limitations": [
         "Business-declared halal by local Muslim proprietors. Independent certificate inspection advised."
+      ]
+    }
+  },
+  {
+    "id": "th-usm-chanya-halal-samui",
+    "slug": "chanya-muslim-thai-food-koh-samui",
+    "name": "Chanya Muslim Thai Food",
+    "type": "restaurant",
+    "city": "Koh Samui",
+    "country": "Thailand",
+    "address": "136/12 Moo 4, Maret, Lamai Beach, Koh Samui, Surat Thani 84310",
+    "coordinates": {
+      "lat": 9.4716,
+      "lng": 100.0469
+    },
+    "cuisine": "Southern Thai · Seafood · Tom Yum",
+    "price": "$$",
+    "emoji": "🥥",
+    "art": "blue",
+    "featured": false,
+    "desc": "Family-run Muslim-owned Thai restaurant near Lamai Beach serving southern Thai dishes and fresh seafood.",
+    "tags": [
+      "Muslim-owned",
+      "Koh Samui",
+      "Lamai Beach",
+      "Halal Seafood"
+    ],
+    "isMuslimOwned": true,
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Surat Thani Islamic Committee / TAT Samui Guide",
+    "dataLicence": "Public directory reference",
+    "evidence": {
+      "status": "business_declared",
+      "scope": "Muslim family-owned kitchen; alcohol-free dining area",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Muslim family-operated restaurant. Recommended to check active certifier credentials upon visit."
       ]
     }
   },
@@ -376,6 +590,7 @@
       "Muslim-friendly",
       "Thai Curries"
     ],
+    "isMuslimOwned": false,
     "isSample": false,
     "fictional": false,
     "sourceName": "Chonburi Provincial Tourism / TAT Halal Check-In",
@@ -411,10 +626,12 @@
     "featured": false,
     "desc": "Family-run local Thai-Muslim eatery in Ayutthaya's historic trading quarter, known for yellow rice biryani and slow-cooked beef soup.",
     "tags": [
+      "Muslim-owned",
       "Heritage community",
       "Khao Mok Kai",
       "Historic quarter"
     ],
+    "isMuslimOwned": true,
     "isSample": false,
     "fictional": false,
     "sourceName": "Ayutthaya Heritage Islamic Community Guide / Food Blog Recommendations",
@@ -450,10 +667,11 @@
     "featured": false,
     "desc": "Prominent Muslim-owned central Hat Yai establishment offering halal dim sum breakfast and southern Thai-Malay dishes.",
     "tags": [
-      "Hat Yai Center",
       "Muslim-owned",
+      "Hat Yai Center",
       "Halal Dim Sum"
     ],
+    "isMuslimOwned": true,
     "isSample": false,
     "fictional": false,
     "sourceName": "Songkhla Islamic Committee / Tourism Authority of Thailand (TAT)",
@@ -489,10 +707,12 @@
     "featured": false,
     "desc": "Butcher supplying fresh halal cuts of chicken and beef to Krabi resort restaurants and local families.",
     "tags": [
+      "Muslim-owned",
       "Halal Meat",
       "Ao Nang",
       "Fresh Poultry & Beef"
     ],
+    "isMuslimOwned": true,
     "isSample": false,
     "fictional": false,
     "sourceName": "Krabi Islamic Committee Merchant Registry",

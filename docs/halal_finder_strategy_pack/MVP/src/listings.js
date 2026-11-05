@@ -71,6 +71,7 @@ export function normalizeListing(raw) {
     desc: asString(item.desc),
     tags,
     coordinates,
+    isMuslimOwned: item.isMuslimOwned === true || tags.some((t) => /muslim-owned/i.test(t)),
     featured: item.featured === true,
     isSponsored: item.isSponsored === true,
     isSample: item.isSample === true || item.fictional === true,
@@ -140,6 +141,7 @@ export const FILTERS = Object.freeze({
   GROCERY: 'Grocery',
   BUTCHER: 'Butcher',
   CERTIFIED: 'Certified evidence',
+  MUSLIM_OWNED: 'Muslim-owned',
   UNKNOWN: 'Unknown',
 });
 
@@ -155,6 +157,8 @@ function matchesFilter(item, filter, today) {
       // Uses the resolved (post-downgrade) status — an expired certificate
       // is not "certified evidence".
       return resolveEvidenceStatus(item.evidence, today).status === 'certificate_reviewed';
+    case FILTERS.MUSLIM_OWNED:
+      return item.isMuslimOwned === true;
     case FILTERS.UNKNOWN:
       return resolveEvidenceStatus(item.evidence, today).status === 'not_verified';
     case FILTERS.ALL:

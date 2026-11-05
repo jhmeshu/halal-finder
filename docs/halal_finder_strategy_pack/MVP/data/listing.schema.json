@@ -72,6 +72,10 @@
       "description": "Optional belt-and-braces marker used by sample-listings.json. true marks a record as demo/sample content that must never be presented as a real, verified listing.",
       "type": "boolean"
     },
+    "isMuslimOwned": {
+      "description": "Optional flag indicating the business is owned and operated by Muslims. Ownership is contextual information, not independent certification.",
+      "type": "boolean"
+    },
     "isSponsored": {
       "description": "true if this is a paid/promoted placement. Sponsorship never changes evidence status; sponsored records must be visibly labelled 'Sponsored' in any UI that renders them.",
       "type": "boolean"

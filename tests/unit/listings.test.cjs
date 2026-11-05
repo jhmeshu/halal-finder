@@ -46,6 +46,7 @@ function normalizeListing(raw) {
     desc: String(item.desc || '').trim(),
     tags,
     coordinates,
+    isMuslimOwned: item.isMuslimOwned === true || tags.some((t) => /muslim-owned/i.test(t)),
     featured: item.featured === true,
     isSponsored: item.isSponsored === true,
     isSample: item.isSample === true || item.fictional === true,
@@ -111,5 +112,14 @@ const normSample = normalizeListing(sampleRecord);
 assert.strictEqual(normSample.isSample, true);
 assert.strictEqual(normSample.fictional, true);
 console.log('  PASS: Sample flag propagation marks records as fictional');
+
+// Test 5: isMuslimOwned derivation from tag or boolean
+const mo1 = normalizeListing({ id: 201, name: 'MO Bistro', isMuslimOwned: true });
+assert.strictEqual(mo1.isMuslimOwned, true);
+const mo2 = normalizeListing({ id: 202, name: 'MO Cafe', tags: ['Muslim-owned', 'Family'] });
+assert.strictEqual(mo2.isMuslimOwned, true);
+const mo3 = normalizeListing({ id: 203, name: 'Corporate Place', tags: ['Halal certified'] });
+assert.strictEqual(mo3.isMuslimOwned, false);
+console.log('  PASS: isMuslimOwned correctly resolved from property or tags');
 
 console.log('All listings unit tests passed!\n');

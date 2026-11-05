@@ -32,6 +32,9 @@ export function cardHtml(item, { isSaved = () => false } = {}) {
   if (item.isSample) {
     headerBadges.push('<span class="sample-flag">Sample · fictional</span>');
   }
+  if (item.isMuslimOwned) {
+    headerBadges.push('<span class="card-badge card-badge-muslim-owned">☪ Muslim-owned</span>');
+  }
 
   const art = item.art ? ` ${escapeHtml(item.art)}` : '';
 

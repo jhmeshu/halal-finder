@@ -682,6 +682,17 @@ a{color:inherit}
   font-weight:850;
   white-space:nowrap;
 }
+.card-badge-muslim-owned{
+  font-size:10px;
+  letter-spacing:0.04em;
+  background:color-mix(in srgb, var(--hf-surface) 90%, var(--hf-primary));
+  color:var(--hf-primary-strong);
+  border:1px solid color-mix(in srgb, var(--hf-primary) 35%, transparent);
+  border-radius:var(--hf-radius-sm);
+  padding:4px 7px;
+  font-weight:800;
+  white-space:nowrap;
+}
 
 /* Shown only when a certificate_reviewed record expired and was downgraded. */
 .downgrade-note{
