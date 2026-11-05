@@ -197,9 +197,60 @@
   <footer class="footer">
     <div><strong>☪ Halal Finder</strong><br>Find halal. Check with confidence.</div>
     <div>Prototype · Sample data only · No live certification checks</div>
-    <div>Free-first build · Privacy-conscious · Global-ready structure</div>
+    <div>Free-first build · Privacy-conscious · Global-ready structure · <button type="button" class="footer-link" data-action="open-privacy">Privacy &amp; Trust Policy</button></div>
   </footer>
 </div>
+<dialog id="privacyDialog" class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="privacyDialogTitle" aria-describedby="privacyDialogSubtitle">
+  <div class="detail-header">
+    <div class="detail-header-text">
+      <span class="eyebrow">Trust &amp; Privacy</span>
+      <h2 class="detail-title" id="privacyDialogTitle" tabindex="-1">Privacy &amp; Sacred Trust Rules</h2>
+      <p class="detail-subtitle" id="privacyDialogSubtitle">How Halal Finder protects user privacy and safeguards community trust.</p>
+    </div>
+    <button type="button" class="detail-close" id="privacyDialogCloseBtn" aria-label="Close privacy notice">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+    </button>
+  </div>
+  <div class="detail-body" id="privacyDialogBody" role="region" aria-label="Privacy and trust rules" tabindex="0">
+    <div class="notice">
+      <strong>Our Core Promise:</strong> Halal Finder is built to provide honest, verifiable evidence without false claims or privacy compromises.
+    </div>
+
+    <div class="detail-section">
+      <h3 class="detail-section-title">1. Privacy &amp; Data Minimization</h3>
+      <p class="small">We collect the minimum personal data necessary:</p>
+      <ul class="small">
+        <li><strong>No mandatory GPS:</strong> You do not need to share device location to search or explore places. City and postal code search are fully supported.</li>
+        <li><strong>Local storage:</strong> Saved places are stored strictly on your local device (in your browser&rsquo;s <code>localStorage</code>) and are never uploaded or tracked across devices in this prototype.</li>
+        <li><strong>Zero third-party trackers:</strong> No invasive ad trackers or behavioral telemetry.</li>
+        <li><strong>Secure certificates:</strong> Original business certificate scans and documentation are held in restricted private storage, never exposed publicly.</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h3 class="detail-section-title">2. Sacred Trust &amp; Evidence Invariants</h3>
+      <ul class="small">
+        <li><strong>No Pay-To-Verify:</strong> Business subscriptions or sponsored listing placements NEVER influence evidence status or trust ratings. Payment cannot buy a verified badge.</li>
+        <li><strong>Five Distinct Statuses:</strong> We never display a generic &ldquo;Verified&rdquo; badge. Instead, listings clearly distinguish between <em>Certificate reviewed</em>, <em>Business-declared halal</em>, <em>Community-reported</em>, <em>Muslim-friendly</em>, and <em>Not verified / needs checking</em>.</li>
+        <li><strong>Honest Uncertainty:</strong> Absence of information is reported honestly as &ldquo;Unknown / needs checking&rdquo; rather than assumed to be halal.</li>
+        <li><strong>Freshness &amp; Downgrade Policy:</strong> Expired certificates automatically downgrade to <em>Not verified / needs checking</em> until re-verified.</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h3 class="detail-section-title">3. Food Scanner &amp; Ingredient Screening</h3>
+      <p class="small">Barcode lookup and ingredient keyword matching are informational triage aids, <strong>NOT religious rulings (fatwas)</strong> or definitive certification. Missing barcode records or lack of flagged terms do not prove an item is halal. Always check with the manufacturer or a trusted halal authority when in doubt.</p>
+    </div>
+
+    <div class="detail-section">
+      <h3 class="detail-section-title">4. Open Data Attribution</h3>
+      <p class="small">Product data is retrieved from Open Food Facts under the Open Database Licence (ODbL). Map integration adheres to OpenStreetMap guidelines and attribution obligations.</p>
+    </div>
+  </div>
+  <div class="detail-footer">
+    <button type="button" class="btn primary" data-action="close-privacy">I understand</button>
+  </div>
+</dialog>
 <dialog id="listingDetailDialog" class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="listingDetailTitle" aria-describedby="listingDetailSubtitle">
   <div class="detail-header">
     <div class="detail-header-text">

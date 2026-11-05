@@ -945,3 +945,33 @@ body.detail-open-fallback::before{
   }
   .report-actions .btn{flex:1 1 auto}
 }
+
+/* ===== HF-06 — privacy & trust notice ===== */
+.footer-link{
+  background:none;
+  border:none;
+  padding:0;
+  color:var(--hf-primary);
+  font:inherit;
+  cursor:pointer;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.footer-link:hover{
+  color:var(--hf-primary-strong);
+}
+.detail-section{
+  margin-block-start:var(--hf-space-4);
+  padding-block-start:var(--hf-space-3);
+  border-block-start:1px solid var(--hf-line);
+}
+.detail-section:first-of-type{
+  border-block-start:none;
+  padding-block-start:0;
+}
+.detail-section-title{
+  font-size:var(--hf-text-body);
+  font-weight:700;
+  margin:0 0 var(--hf-space-2);
+  color:var(--hf-ink);
+}

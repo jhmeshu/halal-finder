@@ -17,6 +17,7 @@ import { initScreening } from './screening.js';
 import { initBarcode } from './barcode.js';
 import { initBusinessForm } from './business.js';
 import { initInstall, registerServiceWorker } from './install.js';
+import { initPrivacy } from './privacy.js';
 
 function boot() {
   hydrateSaved();
@@ -25,6 +26,7 @@ function boot() {
   initRouter();
   initListingDetail();
   initReport();
+  initPrivacy();
   registerServiceWorker();
   initInstall();
   initScreening();
