@@ -5,8 +5,14 @@
 export const HF_SAVED_KEY = 'hf_saved_v2';
 export const HF_SAVED_CORRUPT_KEY = 'hf_saved_v2_corrupt';
 
-// Feedback channel for the MVP. Intentionally empty until a monitored
-// address exists; the UI must not advertise a contact that goes nowhere.
+// Feedback channel for the MVP. Intentionally EMPTY: this repo has no
+// backend and no published, monitored feedback address yet, so the app must
+// not advertise a contact that goes nowhere. While empty, the correction
+// report flow (src/report.js) shows "Feedback channel not configured yet —
+// nothing can be submitted." and renders NO mailto link. Set this to a real,
+// monitored address to enable a mailto link (prefilled subject/body) in the
+// report preview. Never point it at an unmonitored inbox or a third-party
+// form provider. No secret is required — but do not commit personal emails.
 export const HF_FEEDBACK_EMAIL = '';
 
 // Listing data sources (relative to the MVP root, fetched over HTTP).

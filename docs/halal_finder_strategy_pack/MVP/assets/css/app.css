@@ -788,3 +788,160 @@ body.detail-open-fallback::before{
 /* The generic .eyebrow uses --hf-primary, which fails contrast on the dark
  * surface; inside the dialog, use the theme-aware strong primary instead. */
 .detail-header .eyebrow{color:var(--hf-primary-strong)}
+
+/* ===== HF-05 — correction report dialog (local preview, zero network) =====
+ * A second native <dialog> stacked above the listing detail dialog
+ * (z-index 40 > 30). It never touches the network and never persists
+ * anything; closing clears the form, the preview and the report text.
+ * Reuses the .detail-* structural classes (header, body, footer, facts) so
+ * only report-specific pieces are declared here. Logical properties only,
+ * token-only colours.
+ */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip-path:inset(50%);
+  white-space:nowrap;
+  border:0;
+}
+.report-dialog{
+  position:fixed;
+  inset:0;
+  margin:auto;
+  width:min(480px, calc(100vw - var(--hf-space-6)));
+  max-height:calc(100dvh - var(--hf-space-6));
+  padding:0;
+  border:1px solid var(--hf-line);
+  border-radius:var(--hf-radius-2xl);
+  background:var(--hf-surface);
+  color:var(--hf-ink);
+  box-shadow:var(--hf-shadow-lg);
+  overflow:hidden;
+  z-index:40;
+}
+.report-dialog[open]{
+  display:flex;
+  flex-direction:column;
+  animation:detail-dialog-in var(--hf-duration-base) var(--hf-ease-out);
+}
+.report-dialog::backdrop{
+  background:color-mix(in srgb, var(--hf-ink) 55%, transparent);
+}
+.report-dialog [hidden]{display:none !important}
+
+/* Entry point spacing inside the detail dialog footer. */
+.detail-report-btn{margin-inline-end:var(--hf-space-2)}
+
+.report-guard{
+  margin:0 0 var(--hf-space-3);
+  color:var(--hf-ink-2);
+  font-size:var(--hf-text-small);
+  line-height:1.55;
+}
+.report-listing{
+  display:flex;
+  align-items:center;
+  gap:var(--hf-space-2);
+  flex-wrap:wrap;
+  background:var(--hf-surface-muted);
+  border:1px solid var(--hf-line);
+  border-radius:var(--hf-radius-md);
+  padding:var(--hf-space-3);
+  font-size:var(--hf-text-small);
+  line-height:1.45;
+  margin-block-end:var(--hf-space-4);
+}
+.report-listing-name{font-weight:800;overflow-wrap:anywhere}
+.report-field-hint{margin:0 0 var(--hf-space-2)}
+
+/* Inline field errors: danger text, marker glyph, programmatically wired. */
+.field-error{
+  display:flex;
+  align-items:baseline;
+  gap:var(--hf-space-2);
+  margin:var(--hf-space-2) 0 0;
+  font-size:var(--hf-text-small);
+  line-height:1.45;
+  font-weight:700;
+  color:var(--hf-danger-text);
+}
+.field-error[hidden]{display:none}
+.field-error-marker{font-weight:850}
+.field[aria-invalid="true"]{
+  border-color:color-mix(in srgb, var(--hf-danger-text) 55%, var(--hf-line-strong));
+}
+
+.report-actions{
+  display:flex;
+  gap:var(--hf-space-2);
+  flex-wrap:wrap;
+  margin-block-start:var(--hf-space-4);
+}
+
+/* Prepared preview — visibly a local artefact, never a submission. */
+.report-preview{
+  border:1px solid var(--hf-line);
+  border-radius:var(--hf-radius-lg);
+  background:var(--hf-surface-muted);
+  padding:var(--hf-space-4);
+}
+.report-preview-title{
+  margin:0;
+  font-size:var(--hf-text-h3);
+  letter-spacing:-0.01em;
+}
+.report-disclaimer{margin-block:var(--hf-space-3) 0 0}
+.report-sample{
+  display:flex;
+  align-items:center;
+  gap:var(--hf-space-2);
+  flex-wrap:wrap;
+  margin:var(--hf-space-3) 0 0;
+  font-size:var(--hf-text-small);
+  color:var(--hf-ink-2);
+}
+.report-facts{margin-block-start:var(--hf-space-3)}
+.report-note-value{white-space:pre-wrap;overflow-wrap:anywhere}
+.report-source-value{overflow-wrap:anywhere}
+
+.report-text{
+  width:100%;
+  font-family:var(--hf-font-mono);
+  font-size:var(--hf-text-small);
+  line-height:1.5;
+  min-height:180px;
+  resize:vertical;
+}
+
+.report-copy-status{
+  margin:var(--hf-space-3) 0 0;
+  min-height:1.5em;
+  font-size:var(--hf-text-small);
+  line-height:1.5;
+  font-weight:700;
+  color:var(--hf-success-text);
+}
+.report-copy-status.is-warn{color:var(--hf-accent-strong)}
+.report-copy-status:empty{margin-block-start:var(--hf-space-2)}
+
+.report-channel{
+  margin-block-start:var(--hf-space-4);
+  border-block-start:1px solid var(--hf-line);
+  padding-block-start:var(--hf-space-4);
+  display:grid;
+  gap:var(--hf-space-2);
+}
+.report-channel .notice{margin:0}
+.report-mailto{justify-self:start}
+
+@media (max-width: 559px){
+  .report-dialog{
+    width:calc(100vw - (var(--hf-space-4) * 2));
+    max-height:calc(100dvh - var(--hf-space-4));
+  }
+  .report-actions .btn{flex:1 1 auto}
+}

@@ -20,11 +20,16 @@
 import { $, escapeHtml } from './dom.js';
 import { getEvidenceDisplay } from './evidence.js';
 import { typeLabel } from './listings.js';
+import { openReport } from './report.js';
 
 const NOT_RECORDED = 'Not recorded';
 
 let lastInvoker = null;
 let previousBodyOverflow = null;
+// The listing currently shown; used by the "Report a correction" entry
+// point so the report flow can reference the open listing without any
+// network lookup.
+let currentItem = null;
 
 function asText(value) {
   if (typeof value === 'string') {
@@ -257,6 +262,7 @@ export function openListingDetail(item, invoker) {
   const dialog = $('listingDetailDialog');
   if (!dialog || !item || typeof item !== 'object') return false;
 
+  currentItem = item;
   lastInvoker =
     invoker instanceof HTMLElement
       ? invoker
@@ -264,7 +270,10 @@ export function openListingDetail(item, invoker) {
         ? document.activeElement
         : null;
 
-  if (!renderDetail(item)) return false;
+  if (!renderDetail(item)) {
+    currentItem = null;
+    return false;
+  }
 
   lockScroll();
   if (typeof dialog.showModal === 'function') {
@@ -297,6 +306,7 @@ export function closeListingDetail() {
 function handleClosed() {
   unlockScroll();
   if (document.body) document.body.classList.remove('detail-open-fallback');
+  currentItem = null;
   if (lastInvoker && document.contains(lastInvoker)) {
     lastInvoker.focus();
   }
@@ -312,6 +322,13 @@ export function initListingDetail() {
     // Backdrop click: the click lands on the <dialog> element itself.
     if (event.target === dialog) {
       closeListingDetail();
+      return;
+    }
+    // "Report a correction" opens the report dialog on top of this one;
+    // the detail dialog stays open underneath.
+    const reporter = event.target.closest('[data-action="open-report"]');
+    if (reporter) {
+      if (currentItem) openReport(currentItem, reporter);
       return;
     }
     const closer = event.target.closest('[data-action="close-detail"]');

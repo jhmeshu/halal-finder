@@ -5,6 +5,7 @@
 import { initRouter } from './router.js';
 import { initDiscover, getDiscoverItems, renderDiscover } from './discover.js';
 import { initListingDetail } from './detail.js';
+import { initReport } from './report.js';
 import {
   hydrateSaved,
   updateSavedCount,
@@ -23,6 +24,7 @@ function boot() {
 
   initRouter();
   initListingDetail();
+  initReport();
   registerServiceWorker();
   initInstall();
   initScreening();

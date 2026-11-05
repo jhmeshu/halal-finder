@@ -213,7 +213,75 @@
   </div>
   <div class="detail-body" id="listingDetailBody" role="region" aria-label="Listing details" tabindex="0"></div>
   <div class="detail-footer">
+    <button type="button" class="btn outline detail-report-btn" data-action="open-report">Report a correction</button>
     <button type="button" class="btn outline" data-action="close-detail">Close</button>
+  </div>
+</dialog>
+<dialog id="reportDialog" class="report-dialog" role="dialog" aria-modal="true" aria-labelledby="reportDialogTitle" aria-describedby="reportDialogIntro">
+  <div class="detail-header">
+    <div class="detail-header-text">
+      <span class="eyebrow">Correction report</span>
+      <h2 class="detail-title" id="reportDialogTitle" tabindex="-1">Report a correction</h2>
+      <p class="detail-subtitle" id="reportDialogIntro">Nothing is sent from this app. This prepares a report you can copy and send through the Halal Finder feedback channel.</p>
+    </div>
+    <button type="button" class="detail-close" id="reportDialogCloseBtn" aria-label="Close report">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+    </button>
+  </div>
+  <div class="detail-body report-body">
+    <p class="report-guard">Something about this listing <em>may</em> be outdated, inaccurate or misleading — a reviewer will look at your report and decide what, if anything, changes. Please describe what seems inaccurate; do not use this to accuse anyone of dishonesty.</p>
+    <div class="report-listing" id="reportListingSummary" aria-live="polite"></div>
+    <form id="reportForm" novalidate>
+      <label class="field-label" for="reportReason">Reason <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+      <p class="small muted report-field-hint" id="reportReasonHint">Choose the option that best fits. A reviewer will decide what changes, if any.</p>
+      <select class="field" id="reportReason" required aria-required="true" aria-describedby="reportReasonHint">
+        <option value="" selected>Choose a reason…</option>
+        <option value="outdated">Information looks outdated</option>
+        <option value="expired">Evidence or certificate may be expired</option>
+        <option value="incorrect">Something looks incorrect</option>
+        <option value="misleading">Something may be misleading</option>
+        <option value="closed">The place may be closed</option>
+        <option value="duplicate">This may duplicate another listing</option>
+        <option value="other">Something else</option>
+      </select>
+      <p class="field-error" id="reportReasonError" role="alert" hidden><span class="field-error-marker" aria-hidden="true">!</span><span class="field-error-text"></span></p>
+
+      <label class="field-label" for="reportNote">Note (optional)</label>
+      <p class="small muted report-field-hint" id="reportNoteHint">Optional · up to 1,000 characters. Describe what may be inaccurate — a reviewer will decide. Do not include private information about anyone.</p>
+      <textarea class="field" id="reportNote" rows="4" maxlength="1000" aria-describedby="reportNoteHint" placeholder="What may be outdated or inaccurate?"></textarea>
+      <p class="field-error" id="reportNoteError" role="alert" hidden><span class="field-error-marker" aria-hidden="true">!</span><span class="field-error-text"></span></p>
+
+      <label class="field-label" for="reportSourceUrl">Source link (optional)</label>
+      <p class="small muted report-field-hint" id="reportSourceUrlHint">Optional · an http(s) link that supports this report, e.g. the certifier&rsquo;s registry entry.</p>
+      <input class="field" id="reportSourceUrl" type="url" dir="ltr" inputmode="url" autocomplete="off" spellcheck="false" placeholder="https://…" aria-describedby="reportSourceUrlHint">
+      <p class="field-error" id="reportSourceUrlError" role="alert" hidden><span class="field-error-marker" aria-hidden="true">!</span><span class="field-error-text"></span></p>
+
+      <div class="report-actions">
+        <button class="btn primary" type="submit">Prepare report (nothing is sent)</button>
+        <button class="btn outline" type="button" id="reportCancelBtn">Cancel</button>
+      </div>
+    </form>
+    <section id="reportPreview" class="report-preview" aria-labelledby="reportPreviewTitle" hidden>
+      <h3 class="report-preview-title" id="reportPreviewTitle" tabindex="-1">Prepared report — not sent</h3>
+      <p class="notice report-disclaimer" role="note">This report has not been submitted. The listing will not change automatically — a reviewer decides what, if anything, changes.</p>
+      <p class="report-sample" id="reportPreviewSample" hidden><span class="sample-flag">Sample · fictional</span> This report concerns a fictional sample listing.</p>
+      <dl class="detail-facts report-facts" id="reportPreviewFacts"></dl>
+      <label class="field-label" for="reportText">Report text</label>
+      <p class="small muted report-field-hint" id="reportTextHint">Use the Copy button, or select this text and copy it manually.</p>
+      <textarea class="field report-text" id="reportText" rows="12" readonly dir="auto" aria-describedby="reportTextHint"></textarea>
+      <div class="report-actions">
+        <button class="btn primary" type="button" id="reportCopyBtn">Copy report</button>
+        <button class="btn outline" type="button" id="reportEditBtn">Back to edit</button>
+      </div>
+      <p class="report-copy-status" id="reportCopyStatus" role="status" aria-live="polite"></p>
+      <div class="report-channel" id="reportChannel">
+        <a class="btn outline report-mailto" id="reportMailtoLink" hidden>Email the feedback channel</a>
+        <p class="notice report-unconfigured" id="reportFeedbackUnconfigured" hidden>Feedback channel not configured yet — nothing can be submitted.</p>
+      </div>
+    </section>
+  </div>
+  <div class="detail-footer">
+    <button type="button" class="btn outline" data-action="close-report">Close</button>
   </div>
 </dialog>
 <div id="toast" class="toast hide" role="status" aria-live="polite"></div>
