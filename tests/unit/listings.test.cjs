@@ -22,6 +22,13 @@ function normalizeListing(raw) {
     : [];
   const city = String(item.city || '').trim();
   const country = String(item.country || '').trim();
+  const coordinates =
+    item.coordinates &&
+    typeof item.coordinates === 'object' &&
+    typeof item.coordinates.lat === 'number' &&
+    typeof item.coordinates.lng === 'number'
+      ? { lat: item.coordinates.lat, lng: item.coordinates.lng }
+      : null;
 
   return {
     id: typeof item.id === 'number' ? item.id : String(item.id || '').trim(),
@@ -38,6 +45,7 @@ function normalizeListing(raw) {
     art,
     desc: String(item.desc || '').trim(),
     tags,
+    coordinates,
     featured: item.featured === true,
     isSponsored: item.isSponsored === true,
     isSample: item.isSample === true || item.fictional === true,

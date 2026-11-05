@@ -47,6 +47,13 @@ export function normalizeListing(raw) {
     : [];
   const city = asString(item.city);
   const country = asString(item.country);
+  const coordinates =
+    item.coordinates &&
+    typeof item.coordinates === 'object' &&
+    typeof item.coordinates.lat === 'number' &&
+    typeof item.coordinates.lng === 'number'
+      ? { lat: item.coordinates.lat, lng: item.coordinates.lng }
+      : null;
 
   return {
     id: typeof item.id === 'number' ? item.id : asString(item.id),
@@ -63,6 +70,7 @@ export function normalizeListing(raw) {
     art,
     desc: asString(item.desc),
     tags,
+    coordinates,
     featured: item.featured === true,
     isSponsored: item.isSponsored === true,
     isSample: item.isSample === true || item.fictional === true,
@@ -76,7 +84,8 @@ export function normalizeListing(raw) {
 async function fetchJson(fetchImpl, url) {
   let response;
   try {
-    response = await fetchImpl(url, {
+    const freshUrl = url.includes('?') ? `${url}&_t=${Date.now()}` : `${url}?_t=${Date.now()}`;
+    response = await fetchImpl(freshUrl, {
       headers: { Accept: 'application/json' },
       cache: 'no-cache',
     });

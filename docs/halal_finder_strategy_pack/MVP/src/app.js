@@ -18,6 +18,7 @@ import { initBarcode } from './barcode.js';
 import { initBusinessForm } from './business.js';
 import { initInstall, registerServiceWorker } from './install.js';
 import { initPrivacy } from './privacy.js';
+import { initMap } from './map.js';
 
 function boot() {
   hydrateSaved();
@@ -27,6 +28,7 @@ function boot() {
   initListingDetail();
   initReport();
   initPrivacy();
+  initMap();
   registerServiceWorker();
   initInstall();
   initScreening();

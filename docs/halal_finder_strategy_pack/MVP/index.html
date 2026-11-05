@@ -9,7 +9,9 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon-192.png" type="image/png">
   <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="assets/css/app.css">
+  <script src="assets/vendor/leaflet/leaflet.js"></script>
 </head>
 <body>
 <div class="app" id="app">
@@ -62,22 +64,19 @@
         </div>
         <div class="layout">
           <div class="places" id="places" aria-live="polite"></div>
-          <aside class="map-panel" aria-label="Map preview">
+          <aside class="map-panel" aria-label="Interactive map">
             <div class="map-title">
               <div>
-                <h3>Map preview</h3>
-                <div class="small muted">Shared listings · map integration planned</div>
+                <h3>Places map</h3>
+                <div class="small muted">Live locations from directory</div>
               </div>
-              <span class="pill pill-demo">Demo</span>
+              <span class="pill" id="mapCount">0 places</span>
             </div>
-            <div class="map-art" id="mapArt" aria-hidden="true">
-              <div class="pin pin-1"><span>1</span></div>
-              <div class="pin pin-2"><span>2</span></div>
-              <div class="pin pin-3"><span>3</span></div>
-              <div class="pin pin-4"><span>4</span></div>
-              <div class="map-note">Illustrative map only. Pins are not real addresses or live locations yet.</div>
+            <div id="map" class="map-container" role="application" aria-label="Interactive map showing halal places"></div>
+            <div class="map-legend">
+              <span><i class="dot dot-places" aria-hidden="true"></i>Directory places</span>
+              <span>&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors</span>
             </div>
-            <div class="map-legend"><span><i class="dot dot-places" aria-hidden="true"></i>Places listed in this preview</span><span>Map provider will be selected before public launch</span></div>
           </aside>
         </div>
         <div class="ad">

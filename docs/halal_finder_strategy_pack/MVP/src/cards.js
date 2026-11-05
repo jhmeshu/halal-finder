@@ -59,7 +59,7 @@ export function cardHtml(item, { isSaved = () => false } = {}) {
     <div class="small muted">${escapeHtml(typeLine)}</div>
     ${item.desc ? `<p class="small">${escapeHtml(item.desc)}</p>` : ''}
     <div class="tags">${tagHtml}</div>
-    <div class="actions"><button class="btn primary" type="button" data-action="toggle-save" data-id="${key}" aria-pressed="${saved}">${saveLabel}</button><button class="btn outline" type="button" data-action="details" data-id="${key}">Details</button></div>
+    <div class="actions"><button class="btn primary" type="button" data-action="toggle-save" data-id="${key}" aria-pressed="${saved}">${saveLabel}</button><button class="btn outline" type="button" data-action="details" data-id="${key}">Details</button>${item.coordinates ? `<button class="btn outline" type="button" data-action="map-pin" data-id="${key}" title="Show on map">⌖ Map</button>` : ''}</div>
   </div>
 </article>`;
 }

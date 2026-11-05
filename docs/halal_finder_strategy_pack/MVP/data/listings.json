@@ -7,6 +7,10 @@
     "city": "Bangkok",
     "country": "Thailand",
     "address": "4 Soi Ramkhamhaeng 5, Ramkhamhaeng Rd, Suan Luang, Bangkok 10250",
+    "coordinates": {
+      "lat": 13.7439,
+      "lng": 100.5999
+    },
     "cuisine": "Thai · International Buffet",
     "price": "$$$",
     "emoji": "🍲",
@@ -43,6 +47,10 @@
     "city": "Bangkok",
     "country": "Thailand",
     "address": "5th Floor, MBK Center, 444 Phayathai Rd, Wang Mai, Pathum Wan, Bangkok 10330",
+    "coordinates": {
+      "lat": 13.7443,
+      "lng": 100.5299
+    },
     "cuisine": "Thai · Seafood · Asian",
     "price": "$$",
     "emoji": "🍜",
@@ -79,6 +87,10 @@
     "city": "Bangkok",
     "country": "Thailand",
     "address": "259/9 Sukhumvit Soi 22, Khlong Toei, Bangkok 10110",
+    "coordinates": {
+      "lat": 13.7317,
+      "lng": 100.5647
+    },
     "cuisine": "Authentic Thai · Tom Yum · Seafood",
     "price": "$$",
     "emoji": "🥘",
@@ -114,6 +126,10 @@
     "city": "Chiang Mai",
     "country": "Thailand",
     "address": "22-24 Soi 1, Charoen Prathet Rd, Chang Khlan, Chiang Mai 50100",
+    "coordinates": {
+      "lat": 18.7865,
+      "lng": 99.0016
+    },
     "cuisine": "Northern Thai · Khao Soi · Beef & Chicken Noodles",
     "price": "$",
     "emoji": "🍜",
@@ -149,6 +165,10 @@
     "city": "Phuket",
     "country": "Thailand",
     "address": "73 Laem Hin Pier, Ko Maphrao, Mueang Phuket District, Phuket 83000",
+    "coordinates": {
+      "lat": 7.9366,
+      "lng": 98.4116
+    },
     "cuisine": "Southern Thai · Fresh Seafood",
     "price": "$$",
     "emoji": "🐟",
@@ -184,6 +204,10 @@
     "city": "Bangkok",
     "country": "Thailand",
     "address": "Soi Sukhumvit 3/1, Khlong Toei Nuea, Watthana, Bangkok 10110",
+    "coordinates": {
+      "lat": 13.7423,
+      "lng": 100.5529
+    },
     "cuisine": "Halal Groceries · Spices · Halal Packaged Foods",
     "price": "$$",
     "emoji": "🛒",
@@ -219,6 +243,10 @@
     "city": "Chiang Mai",
     "country": "Thailand",
     "address": "Chang Phueak, Mueang Chiang Mai District, Chiang Mai 50300",
+    "coordinates": {
+      "lat": 18.8021,
+      "lng": 98.9868
+    },
     "cuisine": "Fresh Halal Beef · Goat · Poultry",
     "price": "$$",
     "emoji": "🥩",

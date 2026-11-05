@@ -13,6 +13,7 @@ import { loadListings, filterListings, FILTERS } from './listings.js';
 import { cardHtml, findListingById } from './cards.js';
 import { openListingDetail } from './detail.js';
 import { isSaved, toggleSavedAndNotify, updateSavedCount } from './saved.js';
+import { updateMapMarkers, focusMapPlace } from './map.js';
 
 const state = {
   mode: 'loading', // 'loading' | 'error' | 'real' | 'sample'
@@ -121,6 +122,7 @@ export function renderDiscover() {
   grid.innerHTML = parts.join('');
   updateResultCount(items);
   updateSavedCount();
+  updateMapMarkers(items);
 }
 
 async function loadAndRender() {
@@ -176,6 +178,8 @@ function onPlacesClick(event) {
     toggleSavedAndNotify(item);
   } else if (actionEl.dataset.action === 'details') {
     openListingDetail(item, actionEl);
+  } else if (actionEl.dataset.action === 'map-pin') {
+    focusMapPlace(item);
   }
 }
 
