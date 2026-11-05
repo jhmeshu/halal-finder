@@ -9,7 +9,12 @@
     "test": "node tests/agent-frontmatter.test.cjs && node tests/unit/ingredient-screening.test.cjs && node tests/unit/evidence-status.test.cjs && node tests/unit/listings.test.cjs && node tests/unit/barcode.test.cjs && node tests/unit/saved.test.cjs && node tests/unit/listing-schema.test.cjs && node tests/unit/osm-importer.test.cjs",
     "test:agents": "node tests/agent-frontmatter.test.cjs",
     "import:osm": "node scripts/import-osm-halal.cjs",
+    "deploy": "wrangler deploy",
+    "pages:deploy": "wrangler pages deploy docs/halal_finder_strategy_pack/MVP",
     "validate:md": "node .agents/skills/markdown-writer/validate_md.cjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.158.0"
   },
   "keywords": [
     "halal",
