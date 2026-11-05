@@ -1,1 +1,249 @@
-[]
+[
+  {
+    "id": "th-bkk-al-meroz-diwan",
+    "slug": "diwan-al-meroz-bangkok",
+    "name": "Diwan Restaurant (Al Meroz Hotel)",
+    "type": "restaurant",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "4 Soi Ramkhamhaeng 5, Ramkhamhaeng Rd, Suan Luang, Bangkok 10250",
+    "cuisine": "Thai · International Buffet",
+    "price": "$$$",
+    "emoji": "🍲",
+    "art": "green",
+    "featured": true,
+    "desc": "Flagship restaurant within Bangkok's leading halal-certified hotel. Certified across all kitchens and menu items.",
+    "tags": [
+      "CICOT Certified",
+      "Hotel dining",
+      "Alcohol-free"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "The Central Islamic Council of Thailand (CICOT) Registry",
+    "dataLicence": "Public certification registry reference",
+    "evidence": {
+      "status": "certificate_reviewed",
+      "issuer": "The Central Islamic Council of Thailand (CICOT)",
+      "scope": "All premises, kitchens and buffet dining items certified halal; 100% alcohol-free facility",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.halal.co.th",
+      "sourceLicence": "Official registry public listing",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Certification covers hotel food service and dining facilities. Verify seasonal menu additions upon visit."
+      ]
+    }
+  },
+  {
+    "id": "th-bkk-yana-restaurant",
+    "slug": "yana-restaurant-mbk-bangkok",
+    "name": "Yana Restaurant (MBK Center)",
+    "type": "restaurant",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "5th Floor, MBK Center, 444 Phayathai Rd, Wang Mai, Pathum Wan, Bangkok 10330",
+    "cuisine": "Thai · Seafood · Asian",
+    "price": "$$",
+    "emoji": "🍜",
+    "art": "blue",
+    "featured": false,
+    "desc": "Long-established certified halal restaurant located on the 5th floor of MBK Center shopping complex.",
+    "tags": [
+      "CICOT Certified",
+      "Shopping mall",
+      "Thai & Asian"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "The Central Islamic Council of Thailand (CICOT) / Tourism Authority of Thailand",
+    "dataLicence": "Official public registry reference",
+    "evidence": {
+      "status": "certificate_reviewed",
+      "issuer": "The Central Islamic Council of Thailand (CICOT)",
+      "scope": "Full restaurant kitchen and dining services certified halal",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.halal.co.th",
+      "sourceLicence": "Official registry public listing",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Premises certified halal. Validated via official CICOT registry."
+      ]
+    }
+  },
+  {
+    "id": "th-bkk-usman-thai-muslim",
+    "slug": "usman-thai-muslim-food-bangkok",
+    "name": "Usman Thai Muslim Food",
+    "type": "restaurant",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "259/9 Sukhumvit Soi 22, Khlong Toei, Bangkok 10110",
+    "cuisine": "Authentic Thai · Tom Yum · Seafood",
+    "price": "$$",
+    "emoji": "🥘",
+    "art": "green",
+    "featured": false,
+    "desc": "Popular Muslim-owned Thai family restaurant near Asok/Phrom Phong serving homestyle halal Thai dishes.",
+    "tags": [
+      "Muslim-owned",
+      "Central Bangkok",
+      "Family dining"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Tourism Authority of Thailand (TAT) Muslim-friendly Guide",
+    "dataLicence": "Public tourism directory record",
+    "evidence": {
+      "status": "business_declared",
+      "scope": "Muslim-owned and operated; all meat ingredients sourced from halal certified distributors",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Business-declared halal. Owner-operated Muslim establishment; independent formal certificate should be verified on-site."
+      ]
+    }
+  },
+  {
+    "id": "th-cnx-khao-soi-islam",
+    "slug": "khao-soi-islam-chiang-mai",
+    "name": "Khao Soi Islam",
+    "type": "restaurant",
+    "city": "Chiang Mai",
+    "country": "Thailand",
+    "address": "22-24 Soi 1, Charoen Prathet Rd, Chang Khlan, Chiang Mai 50100",
+    "cuisine": "Northern Thai · Khao Soi · Beef & Chicken Noodles",
+    "price": "$",
+    "emoji": "🍜",
+    "art": "purple",
+    "featured": false,
+    "desc": "Historic traditional Muslim eatery in Chiang Mai near Ban Haw Mosque, famous for Northern Thai halal curry egg noodles.",
+    "tags": [
+      "Community heritage",
+      "Khao Soi",
+      "Near Ban Haw Mosque"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Chiang Mai Islamic Committee / Tourism Authority of Thailand",
+    "dataLicence": "Public community heritage directory record",
+    "evidence": {
+      "status": "community_reported",
+      "scope": "Historic Chinese-Thai Muslim community eatery serving local community and visitors",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Community-reported heritage eatery. Check on-site active certificate and credentials."
+      ]
+    }
+  },
+  {
+    "id": "th-hkt-bang-mud-seafood",
+    "slug": "bang-mud-seafood-phuket",
+    "name": "Bang Mud Seafood Floating Restaurant",
+    "type": "restaurant",
+    "city": "Phuket",
+    "country": "Thailand",
+    "address": "73 Laem Hin Pier, Ko Maphrao, Mueang Phuket District, Phuket 83000",
+    "cuisine": "Southern Thai · Fresh Seafood",
+    "price": "$$",
+    "emoji": "🐟",
+    "art": "blue",
+    "featured": false,
+    "desc": "Muslim-owned floating seafood restaurant accessed by longtail boat from Laem Hin Pier. Alcohol-free establishment.",
+    "tags": [
+      "Muslim-owned",
+      "Floating restaurant",
+      "Halal seafood"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Tourism Authority of Thailand (TAT) Phuket Halal Dining Directory",
+    "dataLicence": "Public tourism directory record",
+    "evidence": {
+      "status": "business_declared",
+      "scope": "Muslim-owned kitchen, alcohol-free premises, locally caught fresh seafood and certified poultry",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Business-declared halal by Muslim owners. Independent certificate inspection advised."
+      ]
+    }
+  },
+  {
+    "id": "th-bkk-nana-halal-mart",
+    "slug": "nana-halal-grocery-bangkok",
+    "name": "Nana Halal Grocery & Meat Mart",
+    "type": "grocery",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "address": "Soi Sukhumvit 3/1, Khlong Toei Nuea, Watthana, Bangkok 10110",
+    "cuisine": "Halal Groceries · Spices · Halal Packaged Foods",
+    "price": "$$",
+    "emoji": "🛒",
+    "art": "green",
+    "featured": false,
+    "desc": "Grocery market in Bangkok's Nana Arab/Muslim quarter stocking certified halal groceries, Middle Eastern and South Asian goods.",
+    "tags": [
+      "Halal Groceries",
+      "Sukhumvit Soi 3",
+      "Imported food"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Bangkok Halal Trade Directory / Tourism Authority of Thailand",
+    "dataLicence": "Public trade directory reference",
+    "evidence": {
+      "status": "not_verified",
+      "scope": "Retail grocery shop selling diverse packaged brands; individual items carry manufacturer certification marks",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Retail grocery store. Store itself does not hold a premises certificate; individual packaged foods must be inspected by consumer."
+      ]
+    }
+  },
+  {
+    "id": "th-cnx-chang-phueak-halal-butcher",
+    "slug": "chang-phueak-halal-meat-chiang-mai",
+    "name": "Chang Phueak Halal Butcher",
+    "type": "butcher",
+    "city": "Chiang Mai",
+    "country": "Thailand",
+    "address": "Chang Phueak, Mueang Chiang Mai District, Chiang Mai 50300",
+    "cuisine": "Fresh Halal Beef · Goat · Poultry",
+    "price": "$$",
+    "emoji": "🥩",
+    "art": "purple",
+    "featured": false,
+    "desc": "Local halal meat supplier and butcher shop serving Chiang Mai Muslim families and halal restaurants.",
+    "tags": [
+      "Halal Meat",
+      "Fresh Poultry & Beef",
+      "Chiang Mai"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Chiang Mai Muslim Community Merchant Directory",
+    "dataLicence": "Public directory reference",
+    "evidence": {
+      "status": "business_declared",
+      "scope": "Meat sourced from CICOT-certified slaughterhouses in Northern and Central Thailand",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.halal.co.th",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Slaughterhouse origin declared by butcher; certificate documentation for individual batches should be requested."
+      ]
+    }
+  }
+]

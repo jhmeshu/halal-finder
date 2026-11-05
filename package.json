@@ -6,7 +6,7 @@
   "scripts": {
     "start": "python3 -m http.server 8000 -d docs/halal_finder_strategy_pack/MVP",
     "dev": "python3 -m http.server 8000 -d docs/halal_finder_strategy_pack/MVP",
-    "test": "node tests/agent-frontmatter.test.cjs && node tests/unit/ingredient-screening.test.cjs && node tests/unit/evidence-status.test.cjs && node tests/unit/listings.test.cjs && node tests/unit/barcode.test.cjs && node tests/unit/saved.test.cjs",
+    "test": "node tests/agent-frontmatter.test.cjs && node tests/unit/ingredient-screening.test.cjs && node tests/unit/evidence-status.test.cjs && node tests/unit/listings.test.cjs && node tests/unit/barcode.test.cjs && node tests/unit/saved.test.cjs && node tests/unit/listing-schema.test.cjs",
     "test:agents": "node tests/agent-frontmatter.test.cjs",
     "validate:md": "node .agents/skills/markdown-writer/validate_md.cjs"
   },
