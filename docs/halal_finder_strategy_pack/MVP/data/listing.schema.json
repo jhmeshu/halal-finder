@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Halal Finder listing",
+  "description": "Schema for a single Halal Finder place listing. Both listings.json (production placeholder, intentionally empty until sourced records exist) and sample-listings.json (fictional demo records) are JSON arrays of objects conforming to this schema; validate each array item against it. Core fields are required; additional display/extension attributes are permitted (additionalProperties: true) so the static MVP can carry UI-compatible fields (e.g. cuisine, price, emoji, art, desc, isSample) that a later database phase may promote, rename or drop. Required core fields match AGENTS.md and the Halal Finder strategy pack; evidence.status uses exactly the five sanctioned evidence statuses — never a generic 'verified' value.",
+  "type": "object",
+  "required": [
+    "id",
+    "slug",
+    "name",
+    "type",
+    "city",
+    "country",
+    "sourceName",
+    "dataLicence",
+    "fictional",
+    "evidence"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "description": "Stable record identifier. Integers (minimum 1) are retained for the legacy fictional demo records; production records should use a non-empty string such as an internal UUID, database id or slug.",
+      "anyOf": [
+        { "type": "integer", "minimum": 1 },
+        { "type": "string", "minLength": 1 }
+      ]
+    },
+    "slug": {
+      "description": "Kebab-case, URL-safe identifier. Lowercase ASCII letters, digits and single hyphens only; no leading, trailing or doubled hyphens.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": {
+      "description": "Public business name as shown to users.",
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "description": "Business category. Exactly these three values are supported in the MVP.",
+      "type": "string",
+      "enum": ["restaurant", "grocery", "butcher"]
+    },
+    "city": {
+      "description": "Town or city as displayed to users (e.g. 'London'). Keep separate from country; UIs may join the two with ', '.",
+      "type": "string",
+      "minLength": 1
+    },
+    "country": {
+      "description": "Country as displayed to users (e.g. 'United Kingdom'). Keep casing consistent within a dataset. ISO 3166-1 codes may be adopted in a later schema revision.",
+      "type": "string",
+      "minLength": 2
+    },
+    "address": {
+      "description": "Street address. Optional and never invented; omit when not reliably sourced.",
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceName": {
+      "description": "Human-readable name of the data source for this record (e.g. 'Written permission from business owner, 2026-09-01', 'Oldham Council open data (OGL v3)'). Fictional sample records use 'Halal Finder fictional sample dataset'. Always recorded so incorrect records can be traced, corrected or removed.",
+      "type": "string",
+      "minLength": 1
+    },
+    "dataLicence": {
+      "description": "Licence under which this record may be used and republished (e.g. 'OGL v3.0', 'ODbL 1.0', 'Used with written permission', 'Unlicensed (fictional sample)'). Check before importing; record the licence name, not just a verdict.",
+      "type": "string",
+      "minLength": 1
+    },
+    "fictional": {
+      "description": "true for demo/sample records that are not real businesses and carry no real halal evidence. Production records sourced from a real place must use false. Never set false for an unsourced or invented record.",
+      "type": "boolean"
+    },
+    "isSample": {
+      "description": "Optional belt-and-braces marker used by sample-listings.json. true marks a record as demo/sample content that must never be presented as a real, verified listing.",
+      "type": "boolean"
+    },
+    "isSponsored": {
+      "description": "true if this is a paid/promoted placement. Sponsorship never changes evidence status; sponsored records must be visibly labelled 'Sponsored' in any UI that renders them.",
+      "type": "boolean"
+    },
+    "featured": {
+      "description": "UI-only 'example promotion' placement flag from the MVP. Not an endorsement and not an evidence signal.",
+      "type": "boolean"
+    },
+    "cuisine": {
+      "description": "Display string for cuisine/category tags (e.g. 'Lebanese · Grill'). Free text; not a controlled vocabulary yet.",
+      "type": "string",
+      "minLength": 1
+    },
+    "price": {
+      "description": "Currency-neutral price marker as shown in the MVP (e.g. '£', '££', '$', '¥¥', '$$', '₩₩', '€€'). One to four identical currency symbols; not a real price quote.",
+      "type": "string",
+      "pattern": "^[£$¥₩€]{1,4}$"
+    },
+    "emoji": {
+      "description": "Illustrative emoji art for the demo card header. UI must render it aria-hidden; never a functional icon.",
+      "type": "string",
+      "minLength": 1
+    },
+    "art": {
+      "description": "Optional gradient art class for the demo card header (illustrative only until real photography exists). One of: green, blue, purple. Omit when the demo used no art.",
+      "type": "string",
+      "enum": ["green", "blue", "purple"]
+    },
+    "desc": {
+      "description": "Short display description copy. Field name kept compatible with the MVP UI (desc).",
+      "type": "string",
+      "minLength": 1
+    },
+    "tags": {
+      "description": "Optional display tags. Fictional sample records carry ['Sample data', 'Not a real verification'] so any consumer renders the fiction labelling.",
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "coordinates": {
+      "description": "Optional WGS84 coordinates. Never invented — omit entirely when not reliably sourced. lat in [-90, 90], lng in [-180, 180].",
+      "type": "object",
+      "required": ["lat", "lng"],
+      "additionalProperties": false,
+      "properties": {
+        "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+        "lng": { "type": "number", "minimum": -180, "maximum": 180 }
+      }
+    },
+    "demoStatusLabel": {
+      "description": "Sample-only extension preserving the exact legacy MVP badge copy (e.g. 'Certification evidence example'). Do not use in production records; production UIs derive labels from evidence.status.",
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence": {
+      "description": "Evidence object. Required; every listing must carry exactly one of the five evidence statuses. Only status is required; all other fields are optional and must be omitted (never invented) when unknown.",
+      "type": "object",
+      "required": ["status"],
+      "additionalProperties": true,
+      "properties": {
+        "status": {
+          "description": "The five sanctioned evidence statuses. certificate_reviewed requires an actual reviewed third-party certificate; business_declared is an unconfirmed business claim; community_reported is a user report awaiting review; muslim_friendly is context, not proof; not_verified means evidence is missing, unclear, expired or unconfirmed. Never a generic 'verified'.",
+          "type": "string",
+          "enum": [
+            "certificate_reviewed",
+            "business_declared",
+            "community_reported",
+            "muslim_friendly",
+            "not_verified"
+          ]
+        },
+        "issuer": {
+          "description": "Certifier/issuer name where relevant (e.g. the certifying body). Shown only as permitted by the source.",
+          "type": "string",
+          "minLength": 1
+        },
+        "certificateId": {
+          "description": "Certificate identifier where appropriate and where publication is permitted. Never exposed if the issuer or business has not consented.",
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "description": "What the evidence actually covers, e.g. 'Premises and all menu items', 'Specific products only', 'Halal chicken only'. A certificate for one branch, product or supplier must not be generalised.",
+          "type": "string",
+          "minLength": 1
+        },
+        "issueDate": {
+          "description": "Certificate issue date, ISO 8601 YYYY-MM-DD.",
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "expiryDate": {
+          "description": "Certificate expiry date, ISO 8601 YYYY-MM-DD. A certificate_reviewed record whose expiryDate is in the past must be treated as downgraded to not_verified until re-reviewed (see tests/unit/evidence-status.test.cjs).",
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "lastCheckedAt": {
+          "description": "Date the evidence was last checked/reviewed, ISO 8601 YYYY-MM-DD. Detail views must show this date, or state that evidence is unconfirmed when absent.",
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "nextReviewDate": {
+          "description": "Scheduled next review date, ISO 8601 YYYY-MM-DD.",
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "sourceUrl": {
+          "description": "URL of the evidence source or licence reference (http/https only).",
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "sourceLicence": {
+          "description": "Licence of the evidence source itself (e.g. 'OGL v3.0', 'ODbL 1.0', 'Used with written permission', 'Unlicensed (fictional sample)').",
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewerRole": {
+          "description": "Role of the reviewer, never a personal identity (e.g. 'Evidence reviewer', 'Moderator'). Personal identity lives only in access-restricted internal audit logs.",
+          "type": "string",
+          "minLength": 1
+        },
+        "limitations": {
+          "description": "User-visible limitation notes explaining what was not checked or does not apply (e.g. 'Halal chicken only', 'Menu items marked halal only'). Keep wording plain; never soften into false confidence.",
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

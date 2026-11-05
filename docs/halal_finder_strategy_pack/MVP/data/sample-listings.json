@@ -1,0 +1,181 @@
+[
+  {
+    "id": 1,
+    "slug": "cedar-spice-kitchen",
+    "name": "Cedar & Spice Kitchen",
+    "type": "restaurant",
+    "city": "London",
+    "country": "United Kingdom",
+    "cuisine": "Lebanese · Grill",
+    "price": "££",
+    "emoji": "🥙",
+    "art": "green",
+    "featured": true,
+    "desc": "Demo listing for a neighbourhood grill. Verify directly before visiting.",
+    "tags": [
+      "Sample data",
+      "Not a real verification"
+    ],
+    "isSample": true,
+    "fictional": true,
+    "sourceName": "Halal Finder fictional sample dataset",
+    "dataLicence": "Unlicensed (fictional sample)",
+    "demoStatusLabel": "Business-declared halal",
+    "evidence": {
+      "status": "business_declared",
+      "limitations": [
+        "Fictional sample listing; not a real business.",
+        "No real declaration was received; shown to demonstrate the 'Business-declared halal' label."
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "slug": "maple-crescent-market",
+    "name": "Maple Crescent Market",
+    "type": "grocery",
+    "city": "Toronto",
+    "country": "Canada",
+    "cuisine": "Groceries · Pantry",
+    "price": "$",
+    "emoji": "🛒",
+    "art": "blue",
+    "featured": false,
+    "desc": "Demo grocery listing; product selection and sourcing need confirmation.",
+    "tags": [
+      "Sample data",
+      "Not a real verification"
+    ],
+    "isSample": true,
+    "fictional": true,
+    "sourceName": "Halal Finder fictional sample dataset",
+    "dataLicence": "Unlicensed (fictional sample)",
+    "demoStatusLabel": "Not independently verified",
+    "evidence": {
+      "status": "not_verified",
+      "limitations": [
+        "Fictional sample listing; not a real business.",
+        "Shown to demonstrate the 'Not verified / needs checking' label."
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "slug": "tokyo-halal-table",
+    "name": "Tokyo Halal Table",
+    "type": "restaurant",
+    "city": "Tokyo",
+    "country": "Japan",
+    "cuisine": "Japanese · Ramen",
+    "price": "¥¥",
+    "emoji": "🍜",
+    "art": "purple",
+    "featured": false,
+    "desc": "Illustrative entry showing how submitted evidence may be labelled.",
+    "tags": [
+      "Sample data",
+      "Not a real verification"
+    ],
+    "isSample": true,
+    "fictional": true,
+    "sourceName": "Halal Finder fictional sample dataset",
+    "dataLicence": "Unlicensed (fictional sample)",
+    "demoStatusLabel": "Certification evidence example",
+    "evidence": {
+      "status": "certificate_reviewed",
+      "limitations": [
+        "Fictional sample listing; not a real business.",
+        "No certificate exists; shown to demonstrate the 'Certificate reviewed' label."
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "slug": "north-star-halal-butchers",
+    "name": "North Star Halal Butchers",
+    "type": "butcher",
+    "city": "Sydney",
+    "country": "Australia",
+    "cuisine": "Fresh meat · Poultry",
+    "price": "$$",
+    "emoji": "🥩",
+    "featured": false,
+    "desc": "Demo butcher listing. Supplier and certification details are not checked.",
+    "tags": [
+      "Sample data",
+      "Not a real verification"
+    ],
+    "isSample": true,
+    "fictional": true,
+    "sourceName": "Halal Finder fictional sample dataset",
+    "dataLicence": "Unlicensed (fictional sample)",
+    "demoStatusLabel": "Business-declared halal",
+    "evidence": {
+      "status": "business_declared",
+      "limitations": [
+        "Fictional sample listing; not a real business.",
+        "No real declaration was received; shown to demonstrate the 'Business-declared halal' label."
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "slug": "seoul-garden-kitchen",
+    "name": "Seoul Garden Kitchen",
+    "type": "restaurant",
+    "city": "Seoul",
+    "country": "South Korea",
+    "cuisine": "Korean · Casual dining",
+    "price": "₩₩",
+    "emoji": "🍲",
+    "art": "green",
+    "featured": false,
+    "desc": "Example traveller-focused listing; halal status is not confirmed.",
+    "tags": [
+      "Sample data",
+      "Not a real verification"
+    ],
+    "isSample": true,
+    "fictional": true,
+    "sourceName": "Halal Finder fictional sample dataset",
+    "dataLicence": "Unlicensed (fictional sample)",
+    "demoStatusLabel": "Not independently verified",
+    "evidence": {
+      "status": "not_verified",
+      "limitations": [
+        "Fictional sample listing; not a real business.",
+        "Shown to demonstrate the 'Not verified / needs checking' label."
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "slug": "little-olive-pantry",
+    "name": "Little Olive Pantry",
+    "type": "grocery",
+    "city": "New York",
+    "country": "USA",
+    "cuisine": "Snacks · Imported foods",
+    "price": "$$",
+    "emoji": "🫒",
+    "art": "blue",
+    "featured": true,
+    "desc": "Illustrative grocery entry with evidence review still required.",
+    "tags": [
+      "Sample data",
+      "Not a real verification"
+    ],
+    "isSample": true,
+    "fictional": true,
+    "sourceName": "Halal Finder fictional sample dataset",
+    "dataLicence": "Unlicensed (fictional sample)",
+    "demoStatusLabel": "Certification evidence example",
+    "evidence": {
+      "status": "certificate_reviewed",
+      "limitations": [
+        "Fictional sample listing; not a real business.",
+        "No certificate exists; shown to demonstrate the 'Certificate reviewed' label."
+      ]
+    }
+  }
+]
