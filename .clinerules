@@ -1,0 +1,21 @@
+# Cline Rules — Halal Finder
+
+## Product & Architecture
+- **Promise:** Find halal. Check with confidence.
+- **Mission:** Help Muslims find halal food (restaurants, groceries, butchers) and check packaged food ingredients with clarity, transparency, and peace of mind worldwide.
+- **Frontend:** Mobile-first Progressive Web App (PWA), Service Worker (`sw.js`), Web App Manifest (`manifest.webmanifest`), semantic CSS design tokens, accessible touch UI.
+- **Backend & Database:** Supabase / PostgreSQL / REST API for places, evidence records, product records, corrections, user saves, and moderation logs.
+- **External Integrations:** Open Food Facts API (v2) with caching & attribution, OpenStreetMap (ODbL compliance; no public tile abuse).
+
+## Sacred Trust Invariants (Non-Negotiable)
+- **5 Evidence Statuses:** `Certificate reviewed`, `Business-declared halal`, `Community-reported`, `Muslim-friendly`, `Not verified / needs checking`. Never use a single vague "verified" badge.
+- **No Pay-To-Verify:** Sponsored placement or payment must NEVER influence evidence status or trust rating.
+- **Visible Uncertainty:** "Unknown" is a valid and useful result.
+- **Scanner Triage Aid:** Barcode lookups and ingredient keyword screening are triage checks, NOT religious rulings (fatwas). Missing records or unflagged ingredients do not prove halal status.
+- **Evidence Freshness:** Display "last checked" dates and automatically downgrade expired certificates to unverified.
+- **Privacy:** Allow city/postcode search before requesting GPS location; keep certificate documents in restricted private storage.
+
+## Git & Quality
+- Commits: `<type>: <subject>` (feat, fix, docs, chore, refactor, test, ui, config). Explicit file staging only (`git add <path1> <path2>`).
+- Tests: Run test suite (`npm test`) before committing.
+- Reports & Docs: Write AI documentation to `docs/ai_generated/`.

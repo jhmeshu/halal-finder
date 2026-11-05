@@ -1,0 +1,13 @@
+---
+description: Sacred Trust and Evidence Invariants for Halal Finder
+alwaysApply: true
+---
+
+# Sacred Trust Invariants — Halal Finder
+
+1. **5 Evidence Statuses:** `Certificate reviewed`, `Business-declared halal`, `Community-reported`, `Muslim-friendly`, `Not verified / needs checking`. Never a vague "verified" badge.
+2. **No Pay-To-Verify:** Payment or sponsored listings must NEVER influence halal evidence status.
+3. **"Unknown" is Valid:** Never hide absence of verification.
+4. **Scanner Disclaimer:** Barcode lookup and keyword checks are triage aids, NOT fatwas.
+5. **Freshness & Downgrades:** Track "last checked" dates; expired certificates downgrade to unverified.
+6. **Data Minimization:** Support city/postcode search without forcing GPS.

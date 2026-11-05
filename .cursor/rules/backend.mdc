@@ -1,0 +1,13 @@
+---
+description: Backend development rules for Halal Finder (APIs, schemas, Open Food Facts, moderation)
+globs: src/api/**/*,prisma/**/*,supabase/**/*
+alwaysApply: false
+---
+
+# Backend Development Rules — Halal Finder
+
+- **Architecture:** Structured REST/JSON API endpoints returning `{ data }` or `{ error: { message, code } }`.
+- **Core Entities:** `Place`, `EvidenceRecord`, `Product`, `CorrectionReport`, `ModerationAction`.
+- **Validation:** Strict parameter validation (8–14 digit numeric barcodes, latitude -90..90, longitude -180..180).
+- **Open Food Facts:** Rate limit lookups, cache results, and provide attribution.
+- **Private Documents:** Keep uploaded business certificate documents in private, access-restricted storage.

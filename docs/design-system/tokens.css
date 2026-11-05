@@ -1,0 +1,231 @@
+/* Halal Finder — Amanah Design System v1.0
+ * Single source of truth for design tokens.
+ * Light is default; dark via prefers-color-scheme or [data-theme="dark"].
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Core palette — evolved from MVP (#176b45 family) */
+  --hf-primary: #176b45;
+  --hf-primary-strong: #0f4d2e;
+  --hf-primary-soft: #e1f2e7;
+  --hf-primary-softer: #eef7f0;
+  --hf-on-primary: #ffffff;
+
+  /* Accent — antique amber, the only caution hue */
+  --hf-accent: #98631d;
+  --hf-accent-strong: #6f4a10;
+  --hf-accent-soft: #fff1d8;
+
+  /* Neutrals — warm paper, green-tinted ink */
+  --hf-background: #f7f8f4;
+  --hf-surface: #ffffff;
+  --hf-surface-muted: #f1f4f0;
+  --hf-ink: #18251d;
+  --hf-ink-2: #34453a;
+  --hf-muted: #68766d;
+  --hf-line: #e2e8e1;
+  --hf-line-strong: #ccd6cd;
+
+  /* Semantic — info / community / muslim-friendly / danger */
+  --hf-info-text: #2c5175;
+  --hf-info-bg: #e8f0ff;
+  --hf-info-line: #c9d8f2;
+  --hf-community-text: #4a3d73;
+  --hf-community-bg: #efebf8;
+  --hf-community-line: #d9d2ec;
+  --hf-friendly-text: #0c5757;
+  --hf-friendly-bg: #e6f5f3;
+  --hf-friendly-line: #c2e3de;
+  --hf-success-text: #0f4d2e;
+  --hf-success-bg: #e5f5e9;
+  --hf-success-line: #bfe3cc;
+  --hf-danger-text: #7a2d2d;
+  --hf-danger-bg: #fbeaea;
+  --hf-danger-line: #e8c3c3;
+
+  /* Evidence status aliases (§2.1 of the spec) */
+  --hf-evidence-certificate: #0f4d2e;
+  --hf-evidence-certificate-bg: #e5f5e9;
+  --hf-evidence-declared: #2c5175;
+  --hf-evidence-declared-bg: #e8f0ff;
+  --hf-evidence-community: #4a3d73;
+  --hf-evidence-community-bg: #efebf8;
+  --hf-evidence-friendly: #0c5757;
+  --hf-evidence-friendly-bg: #e6f5f3;
+  --hf-evidence-unknown: #6f4a10;
+  --hf-evidence-unknown-bg: #fff1d8;
+
+  /* Typography */
+  --hf-font-body: Inter, "IBM Plex Sans Arabic", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  --hf-font-heading: Inter, "IBM Plex Sans Arabic", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  --hf-font-quote: Amiri, "IBM Plex Sans Arabic", serif;
+  --hf-font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+
+  --hf-text-display: clamp(2.2rem, 5vw, 3.5rem);
+  --hf-text-h1: 2rem;
+  --hf-text-h2: 1.5rem;
+  --hf-text-h3: 1rem;
+  --hf-text-body: 0.9375rem;
+  --hf-text-small: 0.75rem;
+  --hf-text-label: 0.75rem;
+  --hf-text-eyebrow: 0.6875rem;
+
+  /* Spacing — 4 px grid */
+  --hf-space-1: 4px;
+  --hf-space-2: 8px;
+  --hf-space-3: 12px;
+  --hf-space-4: 16px;
+  --hf-space-5: 20px;
+  --hf-space-6: 24px;
+  --hf-space-8: 32px;
+  --hf-space-10: 40px;
+  --hf-space-12: 48px;
+  --hf-space-16: 64px;
+
+  /* Radii */
+  --hf-radius-sm: 8px;
+  --hf-radius-md: 10px;
+  --hf-radius-lg: 14px;
+  --hf-radius-xl: 18px;
+  --hf-radius-2xl: 24px;
+  --hf-radius-pill: 999px;
+
+  /* Elevation — green-tinted */
+  --hf-shadow-sm: 0 1px 2px rgb(23 59 35 / 0.06);
+  --hf-shadow-md: 0 5px 18px rgb(23 59 35 / 0.07);
+  --hf-shadow-lg: 0 12px 32px rgb(23 59 35 / 0.14);
+  --hf-focus-ring: 0 0 0 3px rgb(23 107 69 / 0.38);
+
+  /* Motion */
+  --hf-duration-fast: 150ms;
+  --hf-duration-base: 250ms;
+  --hf-duration-slow: 350ms;
+  --hf-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --hf-container: 1180px;
+  --hf-gutter: max(20px, calc((100% - var(--hf-container)) / 2));
+  --hf-gutter-phone: 14px;
+
+  /* Patterns */
+  --hf-pattern-opacity: 0.07;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --hf-primary: #176b45;
+    --hf-primary-strong: #3fa66b;
+    --hf-primary-soft: #1d3326;
+    --hf-primary-softer: #1a2b21;
+
+    --hf-accent: #c99a4a;
+    --hf-accent-strong: #e3c878;
+    --hf-accent-soft: #2a2410;
+
+    --hf-background: #111a14;
+    --hf-surface: #18251d;
+    --hf-surface-muted: #1f2d24;
+    --hf-ink: #edf4ef;
+    --hf-ink-2: #c3d2c7;
+    --hf-muted: #9fb3a6;
+    --hf-line: #24352b;
+    --hf-line-strong: #33473a;
+
+    --hf-info-text: #a9c4e8;
+    --hf-info-bg: #1b2740;
+    --hf-info-line: #2f3f5e;
+    --hf-community-text: #c8bce8;
+    --hf-community-bg: #241f3a;
+    --hf-community-line: #3a3454;
+    --hf-friendly-text: #8ee0dc;
+    --hf-friendly-bg: #102e2c;
+    --hf-friendly-line: #214a47;
+    --hf-success-text: #8fdcb0;
+    --hf-success-bg: #14291d;
+    --hf-success-line: #24402f;
+    --hf-danger-text: #f0a8a8;
+    --hf-danger-bg: #331c1c;
+    --hf-danger-line: #4c2a2a;
+
+    --hf-evidence-certificate: #8fdcb0;
+    --hf-evidence-certificate-bg: #14291d;
+    --hf-evidence-declared: #a9c4e8;
+    --hf-evidence-declared-bg: #1b2740;
+    --hf-evidence-community: #c8bce8;
+    --hf-evidence-community-bg: #241f3a;
+    --hf-evidence-friendly: #8ee0dc;
+    --hf-evidence-friendly-bg: #102e2c;
+    --hf-evidence-unknown: #ecd28a;
+    --hf-evidence-unknown-bg: #2a2410;
+
+    --hf-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --hf-shadow-md: 0 5px 18px rgb(0 0 0 / 0.35);
+    --hf-shadow-lg: 0 12px 32px rgb(0 0 0 / 0.5);
+    --hf-focus-ring: 0 0 0 3px rgb(110 200 140 / 0.45);
+  }
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --hf-primary: #176b45;
+  --hf-primary-strong: #3fa66b;
+  --hf-primary-soft: #1d3326;
+  --hf-primary-softer: #1a2b21;
+
+  --hf-accent: #c99a4a;
+  --hf-accent-strong: #e3c878;
+  --hf-accent-soft: #2a2410;
+
+  --hf-background: #111a14;
+  --hf-surface: #18251d;
+  --hf-surface-muted: #1f2d24;
+  --hf-ink: #edf4ef;
+  --hf-ink-2: #c3d2c7;
+  --hf-muted: #9fb3a6;
+  --hf-line: #24352b;
+  --hf-line-strong: #33473a;
+
+  --hf-info-text: #a9c4e8;
+  --hf-info-bg: #1b2740;
+  --hf-info-line: #2f3f5e;
+  --hf-community-text: #c8bce8;
+  --hf-community-bg: #241f3a;
+  --hf-community-line: #3a3454;
+  --hf-friendly-text: #8ee0dc;
+  --hf-friendly-bg: #102e2c;
+  --hf-friendly-line: #214a47;
+  --hf-success-text: #8fdcb0;
+  --hf-success-bg: #14291d;
+  --hf-success-line: #24402f;
+  --hf-danger-text: #f0a8a8;
+  --hf-danger-bg: #331c1c;
+  --hf-danger-line: #4c2a2a;
+
+  --hf-evidence-certificate: #8fdcb0;
+  --hf-evidence-certificate-bg: #14291d;
+  --hf-evidence-declared: #a9c4e8;
+  --hf-evidence-declared-bg: #1b2740;
+  --hf-evidence-community: #c8bce8;
+  --hf-evidence-community-bg: #241f3a;
+  --hf-evidence-friendly: #8ee0dc;
+  --hf-evidence-friendly-bg: #102e2c;
+  --hf-evidence-unknown: #ecd28a;
+  --hf-evidence-unknown-bg: #2a2410;
+
+  --hf-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --hf-shadow-md: 0 5px 18px rgb(0 0 0 / 0.35);
+  --hf-shadow-lg: 0 12px 32px rgb(0 0 0 / 0.5);
+  --hf-focus-ring: 0 0 0 3px rgb(110 200 140 / 0.45);
+}
+
+/* Arabic line-height and tracking rules */
+:lang(ar) {
+  font-family: "IBM Plex Sans Arabic", var(--hf-font-body);
+  line-height: 1.75;
+  letter-spacing: 0;
+}

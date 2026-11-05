@@ -1,0 +1,54 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "instructions": [
+    ".kilo/AGENTS.md",
+    ".kilo/rules/backend-development-rules.md",
+    ".kilo/rules/frontend-development-rules.md",
+    ".kilo/rules/javascript-style-guide.md",
+    ".kilo/rules/testing-rules.md",
+    ".kilo/rules/security-rules.md",
+    ".kilo/rules/git-guidelines.md",
+    ".kilo/rules/context-cache.md"
+  ],
+  "permission": {
+    "bash": {
+      "*": "ask",
+      "git *": "allow",
+      "npm test": "allow",
+      "npm run lint*": "allow",
+      "npm run build*": "allow"
+    },
+    "read": "allow",
+    "edit": "allow",
+    "webfetch": "ask",
+    "websearch": "ask"
+  },
+  "agent": {
+    "analyst": {
+      "description": "Read-only investigator and analyst for Halal Finder. Inspects codebase, PRD documents, schemas, Open Food Facts responses, and public data sources.",
+      "mode": "subagent"
+    },
+    "committer": {
+      "description": "Git commit specialist. Stages and commits a specific task's changes with a project-conventional message citing PRD/ticket IDs — NEVER pushes, merges, rebases, amends, or force-pushes.",
+      "mode": "subagent"
+    },
+    "backend-coder": {
+      "description": "Backend implementation specialist for Halal Finder (API endpoints, database schema for places/evidence/corrections, Open Food Facts integration, moderation queue, validation, tests).",
+      "mode": "subagent"
+    },
+    "frontend-coder": {
+      "description": "Frontend implementation specialist for Halal Finder (PWA, mobile-first touch UI, search/filtering, map integration, ingredient screening, barcode lookup, saved places).",
+      "mode": "subagent"
+    },
+    "product-manager": {
+      "description": "Product-manager worker for the /product-management skill. Turns a rough list of Halal Finder issues into complete, end-to-end deliverables adhering to the PRD and sacred trust invariants.",
+      "mode": "subagent"
+    }
+  },
+  "skills": {
+    "paths": [
+      ".kilo/skills",
+      ".claude/skills"
+    ]
+  }
+}

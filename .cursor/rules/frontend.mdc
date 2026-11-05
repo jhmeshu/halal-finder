@@ -1,0 +1,13 @@
+---
+description: Frontend development rules for Halal Finder (PWA, responsive UI, search, scanner)
+globs: MVP/**/*,src/**/*
+alwaysApply: false
+---
+
+# Frontend Development Rules — Halal Finder
+
+- **Format:** Mobile-first Progressive Web App (PWA) with Service Worker (`sw.js`) and Manifest (`manifest.webmanifest`).
+- **Styling:** Semantic CSS custom properties (`--site-primary: #176b45`, `--green`, `--blue`, `--amber`, `--site-background`).
+- **Touch Targets:** Minimum 44px tap targets.
+- **Evidence Badging:** Distinct visual badges for `Certificate reviewed` (green), `Business-declared halal` (blue), `Muslim-friendly` (neutral), and `Needs checking` (amber).
+- **Scanner UI:** Open Food Facts barcode lookup with prominent disclaimer that keyword screening is an informational aid, NOT a religious fatwa.

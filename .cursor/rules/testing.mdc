@@ -1,0 +1,16 @@
+---
+description: Testing guidelines and verification rules for Halal Finder
+globs: tests/**/*
+alwaysApply: false
+---
+
+# Testing Rules — Halal Finder
+
+- **Suite:** Unit tests in `tests/unit/`, integration tests in `tests/integration/`.
+- **Command:** `npm test`.
+- **Verification Surface:**
+  - Ingredient screening keywords and caution notices.
+  - Barcode format validation (8–14 digits).
+  - 5 evidence status resolutions and expiry downgrades.
+  - No Pay-To-Verify invariant checks.
+- All tests must pass before committing changes.

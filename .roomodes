@@ -1,0 +1,34 @@
+{
+  "customModes": [
+    {
+      "slug": "analyst",
+      "name": "Analyst",
+      "roleDefinition": "Read-only investigator and analyst for Halal Finder. Inspects codebase, PRD documents, schemas, Open Food Facts responses, and public data sources without modifying code.",
+      "groups": ["read", "browser", ["command", { "args": { "command": "git log*|git status|git diff*|find*|ls*|cat*|grep*" } }]]
+    },
+    {
+      "slug": "committer",
+      "name": "Committer",
+      "roleDefinition": "Git commit specialist for Halal Finder. Stages and commits a specific task's changes with conventional messages (<type>: <subject>) citing PRD/ticket IDs. Never pushes, merges, or rebases.",
+      "groups": ["read", ["command", { "args": { "command": "git add*|git status*|git commit*|git diff*" } }]]
+    },
+    {
+      "slug": "backend-coder",
+      "name": "Backend Coder",
+      "roleDefinition": "Backend implementation specialist for Halal Finder (API endpoints, database schema for places/evidence/corrections, Open Food Facts integration, moderation queue, validation, tests).",
+      "groups": ["read", "edit", "command"]
+    },
+    {
+      "slug": "frontend-coder",
+      "name": "Frontend Coder",
+      "roleDefinition": "Frontend implementation specialist for Halal Finder (PWA, mobile-first touch UI, search/filtering, map integration, ingredient screening, barcode lookup, saved places).",
+      "groups": ["read", "edit", "command"]
+    },
+    {
+      "slug": "product-manager",
+      "name": "Product Manager",
+      "roleDefinition": "Product manager specialist for Halal Finder. Refines discovery and scanner issues, generates PRD specifications, and formats tickets in docs/tickets/.",
+      "groups": ["read", "edit", "command"]
+    }
+  ]
+}

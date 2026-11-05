@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#176b45">
+<title>Halal Finder — Amanah Design System</title>
+<meta name="description" content="Visual showcase of the Halal Finder design system: tokens, typography, components, Islamic widgets, RTL support.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☪</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;850&family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./tokens.css">
+<style>
+/* ===== Showcase chrome (not part of the product UI) ===== */
+*{box-sizing:border-box}
+body{margin:0;background:var(--hf-background);color:var(--hf-ink);font:var(--hf-text-body)/1.5 var(--hf-font-body);transition:background var(--hf-duration-base) var(--hf-ease-out)}
+h1,h2,h3{font-family:var(--hf-font-heading);margin:0}
+button{font:inherit;cursor:pointer}
+code{font-family:var(--hf-font-mono);font-size:.8em;background:var(--hf-surface-muted);border:1px solid var(--hf-line);border-radius:6px;padding:1px 6px}
+.layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+.sidebar{position:sticky;top:0;height:100vh;overflow:auto;border-inline-end:1px solid var(--hf-line);padding:18px 14px;background:var(--hf-surface)}
+.sidebar .mark{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.3px;padding:6px 8px 14px;border-bottom:1px solid var(--hf-line);margin-bottom:12px}
+.sidebar .mark .logo{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--hf-primary);color:#fff;font-size:19px}
+.sidebar .mark small{display:block;font-weight:600;color:var(--hf-muted);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.sidebar a{display:block;padding:8px 10px;border-radius:8px;color:var(--hf-ink-2);text-decoration:none;font-size:13px;font-weight:600}
+.sidebar a:hover,.sidebar a:focus-visible{background:var(--hf-primary-softer);color:var(--hf-primary-strong)}
+.main{padding:26px max(20px, calc((100% - 1080px)/2)) 80px;max-width:1240px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.topbar h1{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.04em}
+.topbar p{color:var(--hf-muted);max-width:62ch;margin:6px 0 0}
+.controls{display:flex;gap:8px;align-items:center}
+.seg{display:flex;border:1px solid var(--hf-line-strong);border-radius:var(--hf-radius-pill);overflow:hidden;background:var(--hf-surface)}
+.seg button{border:0;background:transparent;padding:8px 14px;font-weight:700;color:var(--hf-ink-2);font-size:12px}
+.seg button[aria-pressed="true"]{background:var(--hf-primary);color:#fff}
+section.block{margin:0 0 38px;padding:22px;background:var(--hf-surface);border:1px solid var(--hf-line);border-radius:var(--hf-radius-xl);box-shadow:var(--hf-shadow-sm)}
+section.block>header{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid var(--hf-line);padding-bottom:12px;margin-bottom:16px;flex-wrap:wrap}
+section.block h2{font-size:var(--hf-text-h2);letter-spacing:-.02em}
+.eyebrow{font-size:var(--hf-text-eyebrow);letter-spacing:.12em;text-transform:uppercase;color:var(--hf-primary-strong);font-weight:850}
+.muted{color:var(--hf-muted)} .small{font-size:var(--hf-text-small)}
+
+/* ===== Color swatches ===== */
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.swatch{border:1px solid var(--hf-line);border-radius:var(--hf-radius-lg);overflow:hidden;background:var(--hf-surface);text-align:start;padding:0;cursor:pointer;transition:transform var(--hf-duration-fast) var(--hf-ease-out)}
+.swatch:hover{transform:translateY(-2px)}
+.swatch .chip{height:64px}
+.swatch .meta{padding:8px 10px}
+.swatch .meta b{display:block;font-size:11px}
+.swatch .meta code{font-size:10px;background:transparent;border:0;padding:0;color:var(--hf-muted)}
+
+/* ===== Type specimens ===== */
+.type-row{display:flex;align-items:baseline;gap:18px;border-bottom:1px dashed var(--hf-line);padding:10px 0}
+.type-row:last-child{border-bottom:0}
+.type-row .tag{width:150px;flex:0 0 150px;font-size:11px;color:var(--hf-muted);font-family:var(--hf-font-mono)}
+.quote{font-family:var(--hf-font-quote);font-size:1.6rem;line-height:2;color:var(--hf-primary-strong)}
+
+/* ===== Radii / shadow / spacing demos ===== */
+.radii{display:flex;gap:12px;flex-wrap:wrap}
+.radii div{width:110px;height:84px;background:var(--hf-primary-soft);border:1px solid var(--hf-primary-strong);display:grid;place-items:end center;padding-bottom:6px;font-size:11px;color:var(--hf-primary-strong);font-weight:700}
+.shadows{display:flex;gap:18px;flex-wrap:wrap}
+.shadows div{width:130px;height:90px;background:var(--hf-surface);border-radius:var(--hf-radius-xl);display:grid;place-items:center;font-size:12px;color:var(--hf-muted)}
+.spacing{display:grid;gap:8px}
+.spacing .bar{height:16px;background:var(--hf-primary);border-radius:4px}
+.spacing .row{display:grid;grid-template-columns:110px 1fr 50px;gap:10px;align-items:center;font-size:11px;color:var(--hf-muted);font-family:var(--hf-font-mono)}
+
+/* ===== Buttons ===== */
+.btn{border:0;border-radius:var(--hf-radius-md);padding:12px 16px;font-weight:800;min-height:44px;display:inline-flex;align-items:center;gap:8px;transition:transform var(--hf-duration-fast) var(--hf-ease-out),filter var(--hf-duration-fast)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:0;box-shadow:var(--hf-focus-ring)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-primary{background:var(--hf-primary);color:#fff}
+.btn-primary:hover{filter:brightness(.92)}
+.btn-outline{background:var(--hf-surface);border:1px solid var(--hf-line-strong);color:var(--hf-ink-2)}
+.btn-outline:hover{background:var(--hf-primary-softer)}
+.btn-ghost{background:transparent;color:var(--hf-primary-strong)}
+.btn-ghost:hover{background:var(--hf-primary-softer)}
+.btn-danger{background:#7a2d2d;color:#fff}
+.btn-sm{min-height:34px;padding:8px 12px;font-size:12px}
+.btn-lg{min-height:52px;padding:14px 20px;font-size:16px}
+.btn .spin{width:14px;height:14px;border:2px solid #ffffff66;border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+
+/* ===== Forms ===== */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.form-grid{grid-template-columns:1fr}}
+.field-label{display:block;font-size:var(--hf-text-label);font-weight:800;margin:0 0 6px;color:var(--hf-ink-2)}
+.field{width:100%;border:1px solid var(--hf-line-strong);border-radius:var(--hf-radius-md);padding:12px;background:var(--hf-surface);color:var(--hf-ink);min-height:44px}
+.field:focus{outline:0;border-color:var(--hf-primary);box-shadow:var(--hf-focus-ring)}
+.field[aria-invalid="true"]{border-color:#a33b3b}
+.helper{font-size:var(--hf-text-small);color:var(--hf-muted);margin-top:6px}
+.error-msg{display:flex;gap:6px;align-items:center;color:#a33b3b;font-size:var(--hf-text-small);margin-top:6px;font-weight:600}
+.search-wrap{position:relative}
+.search-wrap svg{position:absolute;inset-inline-start:12px;top:50%;transform:translateY(-50%);color:var(--hf-muted);pointer-events:none}
+.search-wrap .field{padding-inline-start:40px}
+.drop{border:1.5px dashed var(--hf-line-strong);background:var(--hf-primary-softer);border-radius:var(--hf-radius-lg);padding:18px;text-align:center;color:var(--hf-primary-strong);font-weight:700}
+
+/* ===== Chips / tags / pills ===== */
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.chip{border:1px solid var(--hf-line);background:var(--hf-surface);color:var(--hf-ink-2);border-radius:var(--hf-radius-pill);padding:9px 14px;font-weight:750;white-space:nowrap;font-size:13px}
+.chip[aria-pressed="true"]{background:var(--hf-primary);border-color:var(--hf-primary);color:#fff}
+.tag{background:var(--hf-surface-muted);color:var(--hf-muted);border-radius:6px;padding:4px 8px;font-size:11px}
+.pill{background:#ffffff1f;border:1px solid #ffffff2e;border-radius:var(--hf-radius-pill);padding:6px 10px;color:#fff;font-size:11px;font-weight:700}
+.count-badge{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:var(--hf-radius-pill);background:var(--hf-accent);color:#fff;font-size:11px;font-weight:800}
+.sponsored{font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:var(--hf-surface-muted);color:var(--hf-muted);padding:4px 8px;border-radius:4px;font-weight:850}
+
+/* ===== Evidence badges ===== */
+.evidence-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.evidence-badge{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:8px;font-size:11px;font-weight:850;border:1px solid transparent}
+.ev-certificate{background:var(--hf-evidence-certificate-bg);color:var(--hf-evidence-certificate);border-color:var(--hf-success-line)}
+.ev-declared{background:var(--hf-evidence-declared-bg);color:var(--hf-evidence-declared);border-color:var(--hf-info-line)}
+.ev-community{background:var(--hf-evidence-community-bg);color:var(--hf-evidence-community);border-color:var(--hf-community-line)}
+.ev-friendly{background:var(--hf-evidence-friendly-bg);color:var(--hf-evidence-friendly);border-color:var(--hf-friendly-line)}
+.ev-unknown{background:var(--hf-evidence-unknown-bg);color:var(--hf-evidence-unknown);border-color:#ecd9a8}
+
+/* ===== Place cards ===== */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{background:var(--hf-surface);border:1px solid var(--hf-line);border-radius:var(--hf-radius-xl);overflow:hidden;box-shadow:var(--hf-shadow-md);transition:transform var(--hf-duration-base) var(--hf-ease-out),box-shadow var(--hf-duration-base)}
+.card:hover{transform:translateY(-2px);box-shadow:var(--hf-shadow-lg)}
+.card-head{height:104px;display:flex;justify-content:space-between;align-items:end;padding:14px;color:#fff;background:linear-gradient(135deg,#9b6a43,#4c3828);position:relative}
+.card-head.green{background:linear-gradient(135deg,#6f9c69,#214b36)}
+.card-head.blue{background:linear-gradient(135deg,#b3a17e,#526a58)}
+.card-head .emoji{font-size:34px}
+.card-body{padding:14px}
+.card h3{font-size:16px;margin-bottom:2px}
+.title-row{display:flex;justify-content:space-between;gap:8px;align-items:start}
+.rating{font-weight:800;font-size:12px;white-space:nowrap}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 12px}
+.actions{display:flex;gap:8px}
+.actions .btn{flex:1;justify-content:center;font-size:11px;min-height:38px}
+.featured-tag{font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:#fff;color:var(--hf-primary-strong);border-radius:6px;padding:4px 7px;font-weight:850}
+
+/* ===== Top bar + bottom tab demo ===== */
+.phone-frame{max-width:390px;margin:auto;border:1px solid var(--hf-line-strong);border-radius:28px;overflow:hidden;box-shadow:var(--hf-shadow-lg);background:var(--hf-background)}
+.appbar{background:var(--hf-primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 14px}
+.appbar .brand{display:flex;align-items:center;gap:8px;font-weight:850}
+.appbar .logo{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:#fff;color:var(--hf-primary)}
+.appbar button{background:transparent;border:0;color:#e9f5ed;font-weight:700;border-radius:8px;padding:8px 10px}
+.appbar .solid{background:#fff;color:var(--hf-primary-strong)}
+.appbar .count{background:var(--hf-accent);color:#fff;border-radius:99px;font-size:10px;padding:1px 6px;margin-inline-start:4px}
+.app-body{padding:18px;min-height:210px;background:var(--hf-background)}
+.bottom-bar{display:flex;justify-content:space-around;border-top:1px solid var(--hf-line);background:var(--hf-surface);padding:8px 4px calc(8px + env(safe-area-inset-bottom))}
+.bottom-bar button{background:transparent;border:0;display:grid;justify-items:center;gap:2px;color:var(--hf-muted);font-size:10px;font-weight:700;padding:4px 8px;border-radius:8px}
+.bottom-bar button[aria-current="page"]{color:var(--hf-primary-strong)}
+.tab-dot{width:18px;height:2px;border-radius:2px;background:transparent}
+.bottom-bar button[aria-current="page"] .tab-dot{background:var(--hf-primary)}
+
+/* ===== Notice ===== */
+.notice{display:flex;gap:10px;align-items:flex-start;background:var(--hf-accent-soft);border:1px solid #ecd9a8;color:#6f4a10;border-radius:var(--hf-radius-lg);padding:12px;font-size:13px;line-height:1.55}
+.notice strong{color:#5c3c0c}
+
+/* ===== Islamic widgets ===== */
+.widget-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.widget{background:var(--hf-surface);border:1px solid var(--hf-line);border-radius:var(--hf-radius-xl);padding:16px;box-shadow:var(--hf-shadow-sm)}
+.hijri-big{font-size:1.35rem;font-weight:800;letter-spacing:-.01em}
+.prayer-table{display:grid;gap:4px;margin-top:10px}
+.prayer-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:8px 10px;border-radius:10px;border:1px solid transparent;font-variant-numeric:tabular-nums}
+.prayer-row.next{background:var(--hf-primary-soft);border-color:var(--hf-success-line);font-weight:800;color:var(--hf-primary-strong)}
+.countdown{font-size:2.4rem;font-weight:800;letter-spacing:.02em;font-variant-numeric:tabular-nums;color:var(--hf-primary-strong);text-align:center;margin:6px 0 2px}
+.tasbih-wrap{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.ring-bg{stroke:var(--hf-surface-muted)} .ring-fg{stroke:var(--hf-primary);transition:stroke-dashoffset .35s var(--hf-ease-out)}
+.dhikr{font-family:var(--hf-font-quote);font-size:1.3rem;color:var(--hf-primary-strong)}
+.qibla-rose{width:120px;height:120px}
+
+/* ===== RTL demo ===== */
+.rtl-demo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.rtl-demo{grid-template-columns:1fr}}
+.rtl-pane{border:1px solid var(--hf-line);border-radius:var(--hf-radius-lg);padding:14px;background:var(--hf-surface)}
+.rtl-pane[dir="rtl"]{background:var(--hf-primary-softer)}
+
+/* ===== Skeleton & empty ===== */
+.skeleton{background:var(--hf-surface-muted);border-radius:8px;position:relative;overflow:hidden}
+.skeleton::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#ffffff88,transparent);animation:shimmer 1.4s infinite}
+@keyframes shimmer{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.empty{border:1px dashed var(--hf-line-strong);border-radius:var(--hf-radius-lg);padding:22px;text-align:center;color:var(--hf-muted)}
+
+/* ===== Do / Don't table ===== */
+.dd{width:100%;border-collapse:collapse;font-size:13px}
+.dd th,.dd td{text-align:start;padding:10px 12px;border-bottom:1px solid var(--hf-line);vertical-align:top}
+.dd th{background:var(--hf-surface-muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--hf-muted)}
+.dd td:first-child{color:var(--hf-success-text);font-weight:600}
+.dd td:last-child{color:var(--hf-danger-text)}
+
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:static;height:auto;display:flex;gap:6px;overflow-x:auto;padding:10px}.sidebar .mark{display:none}.sidebar a{white-space:nowrap}}
+:focus-visible{outline:var(--hf-focus-ring);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" aria-label="Showcase sections">
+    <div class="mark"><span class="logo" aria-hidden="true">☪</span><span>Halal Finder<small>Amanah DS v1.0</small></span></div>
+    <a href="#principles">Principles</a>
+    <a href="#color">Color</a>
+    <a href="#typography">Typography</a>
+    <a href="#spacing">Spacing · Radius · Shadow</a>
+    <a href="#buttons">Buttons</a>
+    <a href="#forms">Forms</a>
+    <a href="#chips">Chips &amp; tags</a>
+    <a href="#evidence">Evidence badges</a>
+    <a href="#cards">Cards</a>
+    <a href="#navigation">Navigation</a>
+    <a href="#overlays">Notice · Dialog · Toast</a>
+    <a href="#widgets">Islamic widgets</a>
+    <a href="#rtl">RTL demo</a>
+    <a href="#loading">Loading &amp; empty</a>
+    <a href="#dont">Do / Don’t</a>
+  </nav>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="eyebrow">Design system</div>
+        <h1>Amanah <span class="muted" style="font-weight:400">— trust, made visible.</span></h1>
+        <p>Halal Finder’s canonical visual language. Evolved from the MVP palette (<code>#176b45</code>), extended for Arabic + English RTL, certified-evidence semantics, and Islamic widgets. Tokens live in <code>tokens.css</code>; rules in <code>halal-finder-design-system.md</code>.</p>
+      </div>
+      <div class="controls" aria-label="Display controls">
+        <div class="seg" role="group" aria-label="Theme">
+          <button id="themeLight" aria-pressed="true">Light</button>
+          <button id="themeDark" aria-pressed="false">Dark</button>
+        </div>
+        <div class="seg" role="group" aria-label="Direction">
+          <button id="dirLtr" aria-pressed="true">LTR · EN</button>
+          <button id="dirRtl" aria-pressed="false">RTL · AR</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. Principles -->
+    <section class="block" id="principles">
+      <header><div><div class="eyebrow">01 · Principles</div><h2>Design for trust, not applause</h2></div></header>
+      <div class="swatches" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+        <div class="swatch" style="cursor:default"><div class="chip" style="background:var(--hf-primary)"></div><div class="meta"><b>Trust before beauty</b><span class="small muted">Evidence outranks aesthetics.</span></div></div>
+        <div class="swatch" style="cursor:default"><div class="chip" style="background:var(--hf-accent)"></div><div class="meta"><b>Unknown is valid</b><span class="small muted">Missing data is shown, not hidden.</span></div></div>
+        <div class="swatch" style="cursor:default"><div class="chip" style="background:var(--hf-primary-strong)"></div><div class="meta"><b>No pay-to-verify</b><span class="small muted">Sponsors are labelled, never endorsed.</span></div></div>
+        <div class="swatch" style="cursor:default"><div class="chip" style="background:var(--hf-friendly-text)"></div><div class="meta"><b>AR + EN are equals</b><span class="small muted">RTL from tokens, not retro-fitted.</span></div></div>
+      </div>
+    </section>
+
+    <!-- 2. Color -->
+    <section class="block" id="color">
+      <header><div><div class="eyebrow">02 · Foundations</div><h2>Color</h2></div><span class="small muted">Click a swatch to copy hex</span></header>
+      <div class="swatches" id="coreSwatches"></div>
+      <h3 style="margin:18px 0 10px;font-size:var(--hf-text-h3)">Semantic &amp; status hues</h3>
+      <div class="swatches" id="semanticSwatches"></div>
+    </section>
+
+    <!-- 3. Typography -->
+    <section class="block" id="typography">
+      <header><div><div class="eyebrow">03 · Foundations</div><h2>Typography</h2></div><div class="small muted">Inter · IBM Plex Sans Arabic · Amiri (quotes only)</div></header>
+      <div class="type-row"><span class="tag">display / 850</span><div style="font-size:var(--hf-text-display);font-weight:850;line-height:1.02;letter-spacing:-.03em">Good food. Greater peace of mind.</div></div>
+      <div class="type-row"><span class="tag">h2 / 800</span><div style="font-size:var(--hf-text-h2);font-weight:800;letter-spacing:-.02em">Explore halal places near you</div></div>
+      <div class="type-row"><span class="tag">body / 400</span><div>Find halal food places and check ingredients with clearer evidence—whether you live nearby or are exploring a new country.</div></div>
+      <div class="type-row"><span class="tag">small / 400</span><div class="small">Last checked 02 Nov 2026 · Source: Open Food Facts · Not a certification authority</div></div>
+      <div class="type-row"><span class="tag">eyebrow / 850</span><div class="eyebrow">Find halal. Check with confidence.</div></div>
+      <div class="type-row" lang="ar"><span class="tag">العربية / 600</span><div style="font-family:'IBM Plex Sans Arabic';font-weight:600;font-size:1.5rem">ابحث عن حلال. وتحقق بثقة.</div></div>
+      <div class="type-row" lang="ar"><span class="tag">body AR / 400</span><div>اعثر على المطاعم والمتاجر الحلال، وتحقق من مكوّنات المنتجات بأدلة أوضح—أينما كنت في العالم.</div></div>
+      <div class="type-row"><span class="tag">quote / Amiri</span><div class="quote" lang="ar">وَكُلُوا مِمَّا ذَكَرَ اسْمَ اللَّهِ عَلَيْهِ</div></div>
+    </section>
+
+    <!-- 4. Spacing / radius / shadow -->
+    <section class="block" id="spacing">
+      <header><div><div class="eyebrow">04 · Foundations</div><h2>Spacing · Radius · Elevation</h2></div></header>
+      <div class="spacing" id="spacingBars"></div>
+      <h3 style="margin:18px 0 10px;font-size:var(--hf-text-h3)">Radii</h3>
+      <div class="radii">
+        <div style="border-radius:var(--hf-radius-sm)">8 sm</div>
+        <div style="border-radius:var(--hf-radius-md)">10 md</div>
+        <div style="border-radius:var(--hf-radius-lg)">14 lg</div>
+        <div style="border-radius:var(--hf-radius-xl)">18 xl</div>
+        <div style="border-radius:var(--hf-radius-2xl)">24 2xl</div>
+        <div style="border-radius:var(--hf-radius-pill);width:130px">pill</div>
+      </div>
+      <h3 style="margin:18px 0 10px;font-size:var(--hf-text-h3)">Shadows (green-tinted)</h3>
+      <div class="shadows">
+        <div style="box-shadow:var(--hf-shadow-sm)">sm</div>
+        <div style="box-shadow:var(--hf-shadow-md)">md</div>
+        <div style="box-shadow:var(--hf-shadow-lg)">lg</div>
+      </div>
+    </section>
+
+    <!-- 5. Buttons -->
+    <section class="block" id="buttons">
+      <header><div><div class="eyebrow">05 · Components</div><h2>Buttons</h2></div><div class="small muted">md = 44px (touch) · sm 34px · lg 52px</div></header>
+      <div class="btn-row">
+        <button class="btn btn-primary">Find places <span aria-hidden="true">↗</span></button>
+        <button class="btn btn-outline">Save place</button>
+        <button class="btn btn-ghost">Details</button>
+        <button class="btn btn-danger">Reject report</button>
+        <button class="btn btn-primary" disabled>Disabled</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Medium</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+        <button class="btn btn-primary" aria-busy="true"><span class="spin" aria-hidden="true"></span> Checking…</button>
+      </div>
+    </section>
+
+    <!-- 6. Forms -->
+    <section class="block" id="forms">
+      <header><div><div class="eyebrow">06 · Components</div><h2>Forms &amp; inputs</h2></div></header>
+      <div class="form-grid">
+        <div>
+          <label class="field-label" for="demo-search">Search</label>
+          <div class="search-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input class="field" id="demo-search" type="search" placeholder="Restaurant, grocery, city or cuisine…">
+          </div>
+          <div class="helper">Try “Lebanese grill London” or “halal butcher”.</div>
+        </div>
+        <div>
+          <label class="field-label" for="demo-barcode">Barcode (EAN/UPC)</label>
+          <input class="field" id="demo-barcode" inputmode="numeric" dir="ltr" placeholder="3017620422003" pattern="\d{8,14}">
+          <div class="helper">8–14 digits. Looked up against Open Food Facts.</div>
+        </div>
+        <div>
+          <label class="field-label" for="demo-cert">Evidence on packaging</label>
+          <select class="field" id="demo-cert"><option>A halal mark is shown (not authenticated)</option><option>Brand declares halal</option><option>No information / not sure</option></select>
+        </div>
+        <div>
+          <label class="field-label" for="demo-err">Certificate ID</label>
+          <input class="field" id="demo-err" aria-invalid="true" aria-describedby="demo-err-msg" value="CERT-???">
+          <div class="error-msg" id="demo-err-msg"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Identifier format not recognised. Check the certificate document.</div>
+        </div>
+        <div>
+          <label class="field-label" for="demo-note">Notes for reviewer</label>
+          <textarea class="field" id="demo-note" rows="3" placeholder="Optional context…"></textarea>
+        </div>
+        <div>
+          <span class="field-label">Certificate upload</span>
+          <div class="drop" role="button" tabindex="0" aria-label="Upload certificate PDF or image">⬆ Drop PDF / image here, or press Enter</div>
+          <div class="helper">Stored privately; never shown publicly without consent.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Chips & tags -->
+    <section class="block" id="chips">
+      <header><div><div class="eyebrow">07 · Components</div><h2>Chips, tags, pills</h2></div></header>
+      <div class="chips" role="group" aria-label="Filter places">
+        <button class="chip" aria-pressed="true">All places</button>
+        <button class="chip" aria-pressed="false">Restaurants</button>
+        <button class="chip" aria-pressed="false">Groceries</button>
+        <button class="chip" aria-pressed="false">Halal meat</button>
+        <button class="chip" aria-pressed="false">Certification evidence</button>
+        <button class="chip" aria-pressed="false">Needs checking</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;align-items:center">
+        <span class="tag">Lebanese</span><span class="tag">Grill</span><span class="tag">££</span><span class="tag">Sample data</span>
+        <span class="pill" style="background:var(--hf-primary);border-color:transparent">Global-ready</span>
+        <span class="count-badge" aria-label="3 saved">3</span>
+        <span class="sponsored">Sponsored</span>
+      </div>
+    </section>
+
+    <!-- 8. Evidence badges -->
+    <section class="block" id="evidence">
+      <header><div><div class="eyebrow">08 · Signature</div><h2>Evidence status badges</h2></div><div class="small muted">The only verification language in the product</div></header>
+      <div class="evidence-row">
+        <span class="evidence-badge ev-certificate"><span aria-hidden="true">✓</span> Certificate reviewed</span>
+        <span class="evidence-badge ev-declared"><span aria-hidden="true">◆</span> Business-declared halal</span>
+        <span class="evidence-badge ev-community"><span aria-hidden="true">◉</span> Community-reported</span>
+        <span class="evidence-badge ev-friendly"><span aria-hidden="true">◍</span> Muslim-friendly</span>
+        <span class="evidence-badge ev-unknown"><span aria-hidden="true">!</span> Not verified · needs checking</span>
+      </div>
+      <p class="small muted">Never colour-alone (glyph + wording always present) · Certificate reviewed always shows “Last checked” on detail views · Expired certificates auto-downgrade to “Not verified”.</p>
+    </section>
+
+    <!-- 9. Cards -->
+    <section class="block" id="cards">
+      <header><div><div class="eyebrow">09 · Components</div><h2>Place cards</h2></div></header>
+      <div class="cards">
+        <article class="card">
+          <div class="card-head green"><span class="emoji" aria-hidden="true">🥙</span><span class="featured-tag">Example promotion</span></div>
+          <div class="card-body">
+            <div class="title-row"><div><h3>Cedar &amp; Spice Kitchen</h3><div class="small muted">London, United Kingdom</div></div><span class="rating">££</span></div>
+            <div class="evidence-row" style="margin:10px 0 6px"><span class="evidence-badge ev-declared"><span aria-hidden="true">◆</span> Business-declared halal</span></div>
+            <div class="small muted">Lebanese · Grill · Restaurant</div>
+            <p class="small">Demo listing. Verify directly with the business before visiting.</p>
+            <div class="tags"><span class="tag">Sample data</span><span class="tag">Last checked 02 Nov 2026</span></div>
+            <div class="actions"><button class="btn btn-primary save-toggle" aria-pressed="false">♡ Save place</button><button class="btn btn-outline">Details</button></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-head blue"><span class="emoji" aria-hidden="true">🍜</span><span class="sponsored" style="background:#ffffffcc;color:#4c3818">Sponsored</span></div>
+          <div class="card-body">
+            <div class="title-row"><div><h3>Tokyo Halal Table</h3><div class="small muted">Tokyo, Japan</div></div><span class="rating">¥¥</span></div>
+            <div class="evidence-row" style="margin:10px 0 6px"><span class="evidence-badge ev-unknown"><span aria-hidden="true">!</span> Not verified · needs checking</span></div>
+            <div class="small muted">Japanese · Ramen · Restaurant</div>
+            <p class="small">Sponsored example. Payment does not imply halal evidence.</p>
+            <div class="tags"><span class="tag">Sample data</span><span class="tag">No certificate on file</span></div>
+            <div class="actions"><button class="btn btn-primary save-toggle" aria-pressed="false">♡ Save place</button><button class="btn btn-outline">Details</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10. Navigation -->
+    <section class="block" id="navigation">
+      <header><div><div class="eyebrow">10 · Components</div><h2>Navigation — top bar &amp; bottom tabs</h2></div></header>
+      <div class="phone-frame">
+        <div class="appbar">
+          <div class="brand"><span class="logo" aria-hidden="true">☪</span>Halal Finder</div>
+          <div style="display:flex;gap:2px;align-items:center">
+            <button>♡ Saved <span class="count">3</span></button>
+            <button class="solid">Install</button>
+          </div>
+        </div>
+        <div class="app-body">
+          <div class="eyebrow">Discover</div>
+          <p class="small muted" style="margin:8px 0 0">Phone-first chrome. Bottom tabs carry primary destinations; the top bar carries brand + install/saved. Safe-area padding respected.</p>
+        </div>
+        <nav class="bottom-bar" aria-label="Primary">
+          <button aria-current="page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Discover<span class="tab-dot"></span></button>
+          <button><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 7V5a2 2 0 0 1 2-2h2M16 3h2a2 2 0 0 1 2 2v2M4 17v2a2 2 0 0 0 2 2h2M16 21h2a2 2 0 0 0 2-2v-2"/><path d="M7 12h2M11 12h1M15 12h2"/></svg>Scan<span class="tab-dot"></span></button>
+          <button><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Saved<span class="tab-dot"></span></button>
+          <button><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>Profile<span class="tab-dot"></span></button>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 11. Overlays -->
+    <section class="block" id="overlays">
+      <header><div><div class="eyebrow">11 · Components</div><h2>Notice · Dialog · Toast</h2></div></header>
+      <div class="notice" role="note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span><strong>Our trust promise:</strong> “Certified”, “business-declared” and “not verified” are different things. Demo labels are examples only; no real business has been checked.</span></div>
+      <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+        <button class="btn btn-outline" id="openDialog">Open evidence preview dialog</button>
+        <button class="btn btn-primary" id="showToast">Show toast</button>
+      </div>
+      <dialog id="evidenceDialog" aria-labelledby="evidenceDialogTitle" style="max-width:480px;border:0;border-radius:var(--hf-radius-2xl);padding:20px;box-shadow:var(--hf-shadow-lg);background:var(--hf-surface);color:var(--hf-ink)">
+        <div class="eyebrow">Evidence preview</div>
+        <h3 id="evidenceDialogTitle" style="font-size:1.15rem;margin:8px 0 10px">Certificate — Tokyo Halal Table</h3>
+        <div class="result-row" style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--hf-line)"><span class="small muted">Issuer</span><strong class="small">Halal Certification Org (demo)</strong></div>
+        <div class="result-row" style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--hf-line)"><span class="small muted">Scope</span><strong class="small">Premises + menu</strong></div>
+        <div class="result-row" style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--hf-line)"><span class="small muted">Expires</span><strong class="small">2027-03-31</strong></div>
+        <div class="result-row" style="display:flex;justify-content:space-between;gap:10px;padding:8px 0"><span class="small muted">Reviewer</span><strong class="small">A. Rahman · 02 Nov 2026</strong></div>
+        <div style="display:flex;justify-content:end;gap:8px;margin-top:14px"><button class="btn btn-ghost" id="closeDialog">Close</button><button class="btn btn-primary" id="closeDialogOk">Looks correct</button></div>
+      </dialog>
+    </section>
+
+    <!-- 12. Islamic widgets -->
+    <section class="block" id="widgets">
+      <header><div><div class="eyebrow">12 · Islamic widgets</div><h2>Faith utilities — informational, not rulings</h2></div></header>
+      <div class="widget-grid">
+
+        <div class="widget" aria-labelledby="hijriTitle">
+          <div class="eyebrow" id="hijriTitle">Hijri date</div>
+          <div class="hijri-big" id="hijriDate">…</div>
+          <div class="small muted" id="gregDate">…</div>
+          <p class="small muted" style="margin:10px 0 0">Umm al-Qura via <code>Intl.DateTimeFormat</code>. May differ ±1 day from local sighting.</p>
+        </div>
+
+        <div class="widget" aria-labelledby="ptTitle">
+          <div class="eyebrow" id="ptTitle">Prayer times · London (sample)</div>
+          <div class="prayer-table" id="prayerTable"></div>
+          <p class="small muted" style="margin:8px 0 0">Sample times. Production: Aladhan API or offline <code>adhan</code> calc; method selectable.</p>
+        </div>
+
+        <div class="widget" aria-labelledby="cdTitle">
+          <div class="eyebrow" id="cdTitle">Next prayer</div>
+          <div class="countdown" id="countdown" role="timer" aria-label="Time until next prayer">--:--:--</div>
+          <div class="small muted" style="text-align:center" id="countdownLabel">…</div>
+        </div>
+
+        <div class="widget" aria-labelledby="tasbihTitle">
+          <div class="eyebrow" id="tasbihTitle">Tasbih counter</div>
+          <div class="tasbih-wrap">
+            <svg class="qibla-rose" viewBox="0 0 128 128" role="img" aria-label="Tasbih progress ring">
+              <circle class="ring-bg" cx="64" cy="64" r="54" fill="none" stroke-width="12"/>
+              <circle class="ring-fg" id="tasbihRing" cx="64" cy="64" r="54" fill="none" stroke-width="12" stroke-linecap="round" transform="rotate(-90 64 64)" stroke-dasharray="339.292" stroke-dashoffset="339.292"/>
+              <text id="tasbihCount" x="64" y="60" text-anchor="middle" font-size="28" font-weight="800" fill="var(--hf-ink)">0</text>
+              <text id="tasbihLaps" x="64" y="80" text-anchor="middle" font-size="10" fill="var(--hf-muted)">0 / 33</text>
+            </svg>
+            <div>
+              <div class="dhikr" lang="ar">سُبْحَانَ اللهِ وَبِحَمْدِهِ</div>
+              <div class="small muted" style="margin:6px 0 10px">Subḥāna Allāhi wa biḥamdih</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-primary" id="tasbihAdd">Count</button><button class="btn btn-outline" id="tasbihReset">Reset</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget" aria-labelledby="qiblaTitle">
+          <div class="eyebrow" id="qiblaTitle">Qibla (static)</div>
+          <svg class="qibla-rose" viewBox="0 0 120 120" role="img" aria-label="Compass rose pointing towards Qibla, 119 degrees">
+            <circle cx="60" cy="60" r="52" fill="var(--hf-primary-softer)" stroke="var(--hf-line-strong)"/>
+            <g stroke="var(--hf-muted)" stroke-width="2"><line x1="60" y1="10" x2="60" y2="20"/><line x1="60" y1="100" x2="60" y2="110"/><line x1="10" y1="60" x2="20" y2="60"/><line x1="100" y1="60" x2="110" y2="60"/></g>
+            <path d="M60 18 L78 78 L60 66 L42 78 Z" fill="var(--hf-primary)" transform="rotate(119 60 60)"/>
+            <circle cx="60" cy="60" r="6" fill="var(--hf-accent)"/>
+          </svg>
+          <p class="small muted" style="margin:10px 0 0">119° from magnetic north (sample). Live mode needs motion permission; always labelled approximate.</p>
+        </div>
+
+      </div>
+      <p class="small muted" style="margin-top:12px">All widgets are informational aids — never presented as religious rulings or as proof of halal status.</p>
+    </section>
+
+    <!-- 13. RTL demo -->
+    <section class="block" id="rtl">
+      <header><div><div class="eyebrow">13 · RTL</div><h2>The same card, mirrored</h2></div><div class="small muted">Toggle RTL/AR in the top bar to mirror the whole showcase</div></header>
+      <div class="rtl-demo">
+        <div class="rtl-pane" lang="en" dir="ltr">
+          <div class="eyebrow">English · LTR</div>
+          <div class="card-body" style="padding:12px 0 0">
+            <div class="title-row"><div><h3>Cedar &amp; Spice Kitchen</h3><div class="small muted">London · Lebanese</div></div><span class="rating">££</span></div>
+            <span class="evidence-badge ev-declared" style="margin:8px 0"><span aria-hidden="true">◆</span> Business-declared halal</span>
+            <div class="actions"><button class="btn btn-primary">Save place</button><button class="btn btn-outline">Details</button></div>
+          </div>
+        </div>
+        <div class="rtl-pane" lang="ar" dir="rtl">
+          <div class="eyebrow">العربية · RTL</div>
+          <div class="card-body" style="padding:12px 0 0">
+            <div class="title-row"><div><h3>سيدر آند سبايس كيتشن</h3><div class="small muted">لندن · لبناني</div></div><span class="rating">££</span></div>
+            <span class="evidence-badge ev-declared" style="margin:8px 0"><span aria-hidden="true">◆</span> حلال بإعلان النشاط التجاري</span>
+            <div class="actions"><button class="btn btn-primary">احفظ المكان</button><button class="btn btn-outline">التفاصيل</button></div>
+          </div>
+        </div>
+      </div>
+      <p class="small muted" style="margin-top:10px">Logical properties only (<code>margin-inline-start</code>, <code>inset-inline-end</code>). Directional icons flip with <code>.hf-flip</code>. Phone/barcode fields stay <code>dir="ltr"</code>.</p>
+    </section>
+
+    <!-- 14. Loading & empty -->
+    <section class="block" id="loading">
+      <header><div><div class="eyebrow">14 · States</div><h2>Loading &amp; empty</h2></div></header>
+      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+        <div class="card"><div class="card-body"><div class="skeleton" style="height:16px;width:60%;margin-bottom:10px"></div><div class="skeleton" style="height:12px;width:40%;margin-bottom:14px"></div><div class="skeleton" style="height:70px"></div></div></div>
+        <div class="empty">
+          <svg width="72" height="56" viewBox="0 0 72 56" aria-hidden="true"><path d="M6 52 V26 Q6 8 36 4 Q66 8 66 26 V52" fill="none" stroke="var(--hf-line-strong)" stroke-width="3" stroke-linejoin="round"/><path d="M24 52 V34 a12 12 0 0 1 24 0 V52" fill="var(--hf-primary-soft)" stroke="var(--hf-primary)" stroke-width="2"/></svg>
+          <strong>No sample matches</strong>
+          <p class="small">Try a different city, cuisine or category.</p>
+          <button class="btn btn-outline btn-sm">Clear filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. Do / Don't -->
+    <section class="block" id="dont">
+      <header><div><div class="eyebrow">15 · Guardrails</div><h2>Do / Don’t</h2></div></header>
+      <table class="dd"><thead><tr><th>Do</th><th>Don’t</th></tr></thead><tbody>
+        <tr><td>Show “Not verified” proudly and clearly</td><td>Hide unknown listings or pending states</td></tr>
+        <tr><td>Label sponsors on every paid unit</td><td>Let payment UI resemble evidence UI</td></tr>
+        <tr><td>Downgrade expired certificates automatically</td><td>Override freshness manually in the UI</td></tr>
+        <tr><td>Use the five evidence badges verbatim</td><td>Invent a sixth “Verified ✓” badge</td></tr>
+        <tr><td>Attribute Open Food Facts inline</td><td>Present keyword hits as halal verdicts</td></tr>
+        <tr><td>Use Lucide icons consistently</td><td>Mix emoji into production chrome</td></tr>
+        <tr><td>Design RTL from tokens</td><td>Flip left/right with a stylesheet afterthought</td></tr>
+        <tr><td>Quote sourced, translated verses</td><td>Decorate with unsourced sacred text</td></tr>
+      </tbody></table>
+    </section>
+
+    <footer class="small muted" style="text-align:center;padding:8px 0 0">Amanah DS v1.0 · Inter / IBM Plex Sans Arabic / Amiri (OFL) · Lucide (ISC) · Open Food Facts (ODbL) · Halal Finder — Find halal. Check with confidence.</footer>
+  </main>
+</div>
+
+<div id="toast" role="status" style="position:fixed;z-index:20;bottom:calc(20px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%) translateY(12px);opacity:0;pointer-events:none;background:var(--hf-primary-strong);color:#fff;padding:12px 16px;border-radius:var(--hf-radius-lg);box-shadow:var(--hf-shadow-lg);transition:opacity .25s var(--hf-ease-out),transform .25s var(--hf-ease-out);max-width:90vw"></div>
+
+<script>
+/* ---------- Theme & direction toggles ---------- */
+const root = document.documentElement;
+const themeLight = document.getElementById('themeLight');
+const themeDark  = document.getElementById('themeDark');
+const dirLtr     = document.getElementById('dirLtr');
+const dirRtl     = document.getElementById('dirRtl');
+function setTheme(t){ root.dataset.theme = t; themeLight.setAttribute('aria-pressed', String(t==='light')); themeDark.setAttribute('aria-pressed', String(t==='dark')); }
+function setDir(d){ root.dir = d; root.lang = d === 'rtl' ? 'ar' : 'en'; dirLtr.setAttribute('aria-pressed', String(d==='ltr')); dirRtl.setAttribute('aria-pressed', String(d==='rtl')); }
+themeLight.addEventListener('click', () => setTheme('light'));
+themeDark.addEventListener('click', () => setTheme('dark'));
+dirLtr.addEventListener('click', () => setDir('ltr'));
+dirRtl.addEventListener('click', () => setDir('rtl'));
+
+/* ---------- Color swatches ---------- */
+const core = [
+  ['Primary','#176b45','var(--hf-primary)'],['Primary strong','#0f4d2e','var(--hf-primary-strong)'],
+  ['Primary soft','#e1f2e7','var(--hf-primary-soft)'],['Accent amber','#98631d','var(--hf-accent)'],
+  ['Accent soft','#fff1d8','var(--hf-accent-soft)'],['Background','#f7f8f4','var(--hf-background)'],
+  ['Surface','#ffffff','var(--hf-surface)'],['Surface muted','#f1f4f0','var(--hf-surface-muted)'],
+  ['Ink','#18251d','var(--hf-ink)'],['Ink 2','#34453a','var(--hf-ink-2)'],['Muted','#68766d','var(--hf-muted)'],['Line','#e2e8e1','var(--hf-line)']
+];
+const semantic = [
+  ['Certificate','#0f4d2e / #e5f5e9','var(--hf-evidence-certificate-bg)'],['Declared','#2c5175 / #e8f0ff','var(--hf-evidence-declared-bg)'],
+  ['Community','#4a3d73 / #efebf8','var(--hf-evidence-community-bg)'],['Muslim-friendly','#0c5757 / #e6f5f3','var(--hf-evidence-friendly-bg)'],
+  ['Unverified','#6f4a10 / #fff1d8','var(--hf-evidence-unknown-bg)'],['Danger','#7a2d2d / #fbeaea','var(--hf-danger-bg)']
+];
+function renderSwatches(list, mount){
+  mount.innerHTML = list.map(([name,hex,bg]) => `<button class="swatch" data-hex="${hex.split(' / ')[0]}" aria-label="Copy ${name} hex"><span class="chip" style="background:${bg}"></span><span class="meta"><b>${name}</b><code>${hex}</code></span></button>`).join('');
+}
+renderSwatches(core, document.getElementById('coreSwatches'));
+renderSwatches(semantic, document.getElementById('semanticSwatches'));
+document.addEventListener('click', e => {
+  const b = e.target.closest('.swatch[data-hex]'); if(!b) return;
+  navigator.clipboard?.writeText(b.dataset.hex); showToast(`Copied ${b.dataset.hex}`);
+});
+
+/* ---------- Spacing bars ---------- */
+const spacing = [['space-1',4],['space-2',8],['space-3',12],['space-4',16],['space-5',20],['space-6',24],['space-8',32],['space-10',40],['space-12',48],['space-16',64]];
+document.getElementById('spacingBars').innerHTML = spacing.map(([n,px]) => `<div class="row"><span>--hf-${n}</span><div class="bar" style="width:${px*4}px"></div><span>${px}px</span></div>`).join('');
+
+/* ---------- Filter chips ---------- */
+document.querySelectorAll('.chips .chip').forEach(chip => chip.addEventListener('click', () => {
+  chip.closest('.chips').querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', String(c===chip)));
+}));
+
+/* ---------- Save toggles ---------- */
+document.querySelectorAll('.save-toggle').forEach(btn => btn.addEventListener('click', () => {
+  const on = btn.getAttribute('aria-pressed') === 'true';
+  btn.setAttribute('aria-pressed', String(!on));
+  btn.textContent = !on ? '♥ Saved' : '♡ Save place';
+  showToast(!on ? 'Saved on this device' : 'Removed from saved places');
+}));
+
+/* ---------- Toast ---------- */
+const toastEl = document.getElementById('toast');
+let toastTimer;
+function showToast(msg){ toastEl.textContent = msg; toastEl.style.opacity = '1'; toastEl.style.transform = 'translateX(-50%) translateY(0)'; clearTimeout(toastTimer); toastTimer = setTimeout(() => { toastEl.style.opacity = '0'; toastEl.style.transform = 'translateX(-50%) translateY(12px)'; }, 2600); }
+document.getElementById('showToast').addEventListener('click', () => showToast('Certificate preview loaded · sample data'));
+
+/* ---------- Dialog ---------- */
+const dialog = document.getElementById('evidenceDialog');
+document.getElementById('openDialog').addEventListener('click', () => dialog.showModal());
+document.getElementById('closeDialog').addEventListener('click', () => dialog.close());
+document.getElementById('closeDialogOk').addEventListener('click', () => { dialog.close(); showToast('Thanks — feedback recorded (demo)'); });
+
+/* ---------- Hijri + Gregorian date ---------- */
+const now = new Date();
+try { document.getElementById('hijriDate').textContent = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {day:'numeric', month:'long', year:'numeric'}).format(now); } catch(e) { document.getElementById('hijriDate').textContent = 'Hijri unavailable in this browser'; }
+document.getElementById('gregDate').textContent = new Intl.DateTimeFormat('en-GB', {weekday:'long', day:'numeric', month:'long', year:'numeric'}).format(now);
+
+/* ---------- Prayer times (sample London) + next-prayer countdown ---------- */
+const PRAYERS = [['Fajr','05:12'],['Sunrise','06:58'],['Dhuhr','12:48'],['Asr','15:41'],['Maghrib','18:30'],['Isha','19:55']];
+const FARDH = PRAYERS.filter(([n]) => n !== 'Sunrise');
+const parse = ([n,hhmm], d) => { const [h,m] = hhmm.split(':').map(Number); const t = new Date(d); t.setHours(h,m,0,0); return {name:n, at:t}; };
+let next = null, today = new Date();
+const todays = FARDH.map(p => parse(p, today));
+next = todays.find(p => p.at > now) || parse(FARDH[0], new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1));
+document.getElementById('prayerTable').innerHTML = PRAYERS.map(([n,t]) => `<div class="prayer-row${n===next.name?' next':''}"><span>${n}${n===next.name?' · next':''}</span><span>${t}</span></div>`).join('');
+function tick(){
+  let diff = Math.max(0, next.at - new Date());
+  const h = String(Math.floor(diff/3600000)).padStart(2,'0'), m = String(Math.floor(diff%3600000/60000)).padStart(2,'0'), s = String(Math.floor(diff%60000/1000)).padStart(2,'0');
+  document.getElementById('countdown').textContent = `${h}:${m}:${s}`;
+  document.getElementById('countdownLabel').textContent = `Until ${next.name} (${String(next.at.getHours()).padStart(2,'0')}:${String(next.at.getMinutes()).padStart(2,'0')})`;
+}
+setInterval(tick, 1000); tick();
+
+/* ---------- Tasbih counter ---------- */
+const TARGET = 33, CIRC = 339.292;
+let count = 0, laps = 0;
+const ring = document.getElementById('tasbihRing'), countEl = document.getElementById('tasbihCount'), lapsEl = document.getElementById('tasbihLaps');
+function renderTasbih(){ countEl.textContent = count; lapsEl.textContent = `${laps} / ${TARGET}`; ring.style.strokeDashoffset = String(CIRC * (1 - count/TARGET)); }
+document.getElementById('tasbihAdd').addEventListener('click', () => { count += 1; if(count >= TARGET){ count = 0; laps += 1; navigator.vibrate?.([20,40,20]); showToast(`Round ${laps} complete`); } else navigator.vibrate?.(8); renderTasbih(); });
+document.getElementById('tasbihReset').addEventListener('click', () => { count = 0; laps = 0; renderTasbih(); });
+renderTasbih();
+</script>
+</body>
+</html>

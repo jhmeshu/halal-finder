@@ -1,0 +1,12 @@
+---
+description: Git guidelines and conventional commit rules for Halal Finder
+alwaysApply: true
+---
+
+# Git Guidelines — Halal Finder
+
+- **Commit Format:** `<type>: <subject>` (lowercase, imperative, <=72 chars). Valid types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ui`, `config`.
+- **Traceability:** Cite PRD/ticket IDs (`PRD-01`, `F01`, etc.).
+- **Staging:** Explicit file paths only (`git add <file1> <file2>`). NEVER `git add .` or `git add -A`.
+- **Quality Gate:** Verify tests pass (`npm test`) before committing.
+- **Push Policy:** Never push without explicit user authorization.
