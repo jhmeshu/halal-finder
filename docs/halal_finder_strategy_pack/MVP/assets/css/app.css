@@ -561,3 +561,57 @@ a{color:inherit}
   .art-title{font-size:26px}
   .map-art{height:220px}
 }
+
+/* ===== HF-03 — listing data states & sample labelling ===== */
+.u-mt-2{margin-block-start:var(--hf-space-2)}
+
+.list-status{
+  grid-column:1 / -1;
+  padding:35px;
+  text-align:center;
+  color:var(--hf-muted);
+}
+
+/* Error state (fetch/parse failure) — visible, with inline Retry action. */
+.notice-error{
+  grid-column:1 / -1;
+  background:var(--hf-danger-bg);
+  border:1px solid var(--hf-danger-line);
+  color:var(--hf-danger-text);
+  border-radius:var(--hf-radius-md);
+  padding:var(--hf-space-4);
+  font-size:var(--hf-text-small);
+  line-height:1.5;
+}
+
+/* Honest empty-directory path: full-width callout above sample cards. */
+.sample-notice{grid-column:1 / -1}
+.sample-heading{
+  grid-column:1 / -1;
+  border-block-start:1px solid var(--hf-line);
+  padding-block-start:var(--hf-space-4);
+}
+.sample-heading h3{margin:0 0 var(--hf-space-1);margin-inline:0;font-size:var(--hf-text-h3)}
+.sample-heading p{margin:0}
+
+/* Per-card fictional labelling (in addition to the group callout). */
+.card-head-badges{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+.sample-flag{
+  font-size:10px;
+  letter-spacing:0.07em;
+  text-transform:uppercase;
+  background:var(--hf-on-primary);
+  color:var(--hf-ink-2);
+  border-radius:var(--hf-radius-sm);
+  padding:5px 7px;
+  font-weight:850;
+  white-space:nowrap;
+}
+
+/* Shown only when a certificate_reviewed record expired and was downgraded. */
+.downgrade-note{
+  margin:calc(var(--hf-space-1) * -1) 0 var(--hf-space-2);
+  font-size:var(--hf-text-small);
+  color:var(--hf-accent-strong);
+  font-weight:700;
+}
