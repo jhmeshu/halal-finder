@@ -9,7 +9,7 @@ This folder holds the listing data contract and the two listing files for the MV
 | File | Purpose | State |
 | --- | --- | --- |
 | `listing.schema.json` | JSON Schema (draft 2020-12) describing one listing object | Current |
-| `listings.json` | Production listings for the directory and map | Initial Thailand sourced cluster (7 records with CICOT/TAT provenance) |
+| `listings.json` | Production listings for the directory and map | Thailand multi-city cluster (13 records across Bangkok, Phuket, Chiang Mai, Krabi, Pattaya, Hat Yai, Ayutthaya with CICOT/TAT/community provenance) |
 | `sample-listings.json` | Six fictional demo listings ported from the MVP UI | Sample only — never present as real |
 | `README.md` | This document | Current |
 

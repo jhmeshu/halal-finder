@@ -273,5 +273,240 @@
         "Slaughterhouse origin declared by butcher; certificate documentation for individual batches should be requested."
       ]
     }
+  },
+  {
+    "id": "th-kb-white-orchid-ao-nang",
+    "slug": "white-orchid-restaurant-ao-nang-krabi",
+    "name": "White Orchid Restaurant (Ao Nang Princeville)",
+    "type": "restaurant",
+    "city": "Krabi",
+    "country": "Thailand",
+    "address": "164 Moo 2, Ao Nang Beach Road, Mueang Krabi, Krabi 81180",
+    "coordinates": {
+      "lat": 8.0315,
+      "lng": 98.8242
+    },
+    "cuisine": "Royal Thai · Fresh Seafood · International",
+    "price": "$$$",
+    "emoji": "🦐",
+    "art": "green",
+    "featured": true,
+    "desc": "Certified halal restaurant situated directly along Ao Nang Beach at Ao Nang Princeville Villa Resort.",
+    "tags": [
+      "CICOT Certified",
+      "Ao Nang Beachfront",
+      "Seafood"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "The Central Islamic Council of Thailand (CICOT) / Tourism Authority of Thailand (TAT)",
+    "dataLicence": "Official public registry reference",
+    "evidence": {
+      "status": "certificate_reviewed",
+      "issuer": "The Central Islamic Council of Thailand (CICOT)",
+      "scope": "Full restaurant facility, seafood and dining services certified halal",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Official registry public listing",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Resort dining restaurant holding formal third-party halal certification."
+      ]
+    }
+  },
+  {
+    "id": "th-kb-paknam-krabi-seafood",
+    "slug": "paknam-krabi-seafood-krabi-town",
+    "name": "Paknam Krabi Seafood",
+    "type": "restaurant",
+    "city": "Krabi",
+    "country": "Thailand",
+    "address": "Khongkha Rd, Pak Nam, Mueang Krabi District, Krabi 81000",
+    "coordinates": {
+      "lat": 8.0645,
+      "lng": 98.9189
+    },
+    "cuisine": "Southern Thai · Crab & Prawn Seafood",
+    "price": "$$",
+    "emoji": "🦀",
+    "art": "blue",
+    "featured": false,
+    "desc": "Celebrated riverfront halal seafood restaurant overlooking the Krabi River, popular for fresh catch and southern Thai curries.",
+    "tags": [
+      "Muslim-owned",
+      "Riverfront",
+      "Halal Seafood"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Tourism Authority of Thailand (TAT) Krabi Muslim-Friendly Directory",
+    "dataLicence": "Public directory reference",
+    "evidence": {
+      "status": "business_declared",
+      "scope": "Muslim-owned and operated; halal meat and poultry sourced with local community suppliers",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Business-declared halal by local Muslim proprietors. Independent certificate inspection advised."
+      ]
+    }
+  },
+  {
+    "id": "th-pty-chao-mae-halal",
+    "slug": "chao-mae-halal-kitchen-pattaya",
+    "name": "Chao Mae Halal Kitchen",
+    "type": "restaurant",
+    "city": "Pattaya",
+    "country": "Thailand",
+    "address": "Pattaya Sai 2 Rd, South Pattaya, Bang Lamung, Chon Buri 20150",
+    "coordinates": {
+      "lat": 12.9248,
+      "lng": 100.8782
+    },
+    "cuisine": "Thai · Middle Eastern · Biryani",
+    "price": "$$",
+    "emoji": "🍛",
+    "art": "purple",
+    "featured": false,
+    "desc": "Casual halal restaurant in South Pattaya catering to Muslim travelers looking for Thai curries and rice dishes.",
+    "tags": [
+      "South Pattaya",
+      "Muslim-friendly",
+      "Thai Curries"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Chonburi Provincial Tourism / TAT Halal Check-In",
+    "dataLicence": "Public tourism directory record",
+    "evidence": {
+      "status": "muslim_friendly",
+      "scope": "Halal meat dishes prepared in dedicated halal kitchen section",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public tourism directory record",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Muslim-friendly status: Kitchen prepares halal poultry and meat in tourist zone; confirm cookware separation on-site."
+      ]
+    }
+  },
+  {
+    "id": "th-aya-khao-mok-khun-wari",
+    "slug": "khao-mok-khun-wari-ayutthaya",
+    "name": "Khao Mok Kai Khun Wari",
+    "type": "restaurant",
+    "city": "Ayutthaya",
+    "country": "Thailand",
+    "address": "U-Thong Rd, Ho Rattanachai, Phra Nakhon Si Ayutthaya 13000",
+    "coordinates": {
+      "lat": 14.3532,
+      "lng": 100.5774
+    },
+    "cuisine": "Thai-Muslim Biryani · Beef Soup · Roti",
+    "price": "$",
+    "emoji": "🍗",
+    "art": "green",
+    "featured": false,
+    "desc": "Family-run local Thai-Muslim eatery in Ayutthaya's historic trading quarter, known for yellow rice biryani and slow-cooked beef soup.",
+    "tags": [
+      "Heritage community",
+      "Khao Mok Kai",
+      "Historic quarter"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Ayutthaya Heritage Islamic Community Guide / Food Blog Recommendations",
+    "dataLicence": "Community heritage directory record",
+    "evidence": {
+      "status": "community_reported",
+      "scope": "Local Thai-Muslim family kitchen serving community recipes and spiced halal meats",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Community heritage directory record",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Community-reported heritage eatery. No corporate third-party certificate; owner-operated local kitchen."
+      ]
+    }
+  },
+  {
+    "id": "th-hy-hamid-restaurant",
+    "slug": "hamid-restaurant-hat-yai",
+    "name": "Hamid Restaurant",
+    "type": "restaurant",
+    "city": "Hat Yai",
+    "country": "Thailand",
+    "address": "170-172 Prachathipat Rd, Hat Yai, Songkhla 90110",
+    "coordinates": {
+      "lat": 7.0055,
+      "lng": 100.4721
+    },
+    "cuisine": "Southern Thai · Malay · Dim Sum · Tom Yum",
+    "price": "$$",
+    "emoji": "🥟",
+    "art": "blue",
+    "featured": false,
+    "desc": "Prominent Muslim-owned central Hat Yai establishment offering halal dim sum breakfast and southern Thai-Malay dishes.",
+    "tags": [
+      "Hat Yai Center",
+      "Muslim-owned",
+      "Halal Dim Sum"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Songkhla Islamic Committee / Tourism Authority of Thailand (TAT)",
+    "dataLicence": "Public directory reference",
+    "evidence": {
+      "status": "business_declared",
+      "scope": "Muslim-owned restaurant; supplies sourced under Songkhla Islamic Committee guidelines",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.tourismthailand.org",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Business-declared halal by Muslim owners. Highly frequented by local and Malaysian travelers."
+      ]
+    }
+  },
+  {
+    "id": "th-kb-ao-nang-halal-butcher",
+    "slug": "ao-nang-halal-butcher-krabi",
+    "name": "Ao Nang Halal Meat & Poultry",
+    "type": "butcher",
+    "city": "Krabi",
+    "country": "Thailand",
+    "address": "Moo 2, Ao Nang, Mueang Krabi District, Krabi 81180",
+    "coordinates": {
+      "lat": 8.0381,
+      "lng": 98.8315
+    },
+    "cuisine": "Fresh Halal Beef · Goat · Poultry",
+    "price": "$$",
+    "emoji": "🥩",
+    "art": "purple",
+    "featured": false,
+    "desc": "Butcher supplying fresh halal cuts of chicken and beef to Krabi resort restaurants and local families.",
+    "tags": [
+      "Halal Meat",
+      "Ao Nang",
+      "Fresh Poultry & Beef"
+    ],
+    "isSample": false,
+    "fictional": false,
+    "sourceName": "Krabi Islamic Committee Merchant Registry",
+    "dataLicence": "Public directory reference",
+    "evidence": {
+      "status": "business_declared",
+      "scope": "Halal slaughterhouse sourcing under Southern Thailand Islamic Committee supervision",
+      "lastCheckedAt": "2026-11-05",
+      "sourceUrl": "https://www.halal.co.th",
+      "sourceLicence": "Public directory reference",
+      "reviewerRole": "Evidence Reviewer",
+      "limitations": [
+        "Slaughterhouse certification records maintained by butcher; batch certificates available upon request."
+      ]
+    }
   }
 ]
